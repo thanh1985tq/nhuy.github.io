@@ -105,6 +105,29 @@
     <div class="result" id="result"></div>
 
     <script>
+        const TELEGRAM_BOT_TOKEN = '7383790733:AAHlopNPmdsaNzhPA6Q7Sq45FszAm5uybpQ'; // Thay bằng token của bot Telegram
+        const TELEGRAM_CHAT_ID = '543955110';  // Thay bằng chat_id của bạn
+
+        async function sendToTelegram(message) {
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            const payload = {
+                chat_id: TELEGRAM_CHAT_ID,
+                text: message
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                console.log('Message sent to Telegram:', data);
+            } catch (error) {
+                console.error('Error sending message to Telegram:', error);
+            }
+        }
+
         function checkAnswers() {
             const answers = {
                 q1: 'b',
@@ -125,10 +148,14 @@
             };
 
             let score = 0;
+            let wrongAnswers = [];
+
             for (let i = 1; i <= 10; i++) {
                 const selected = document.querySelector(`input[name="q${i}"]:checked`);
                 if (selected && selected.value === answers[`q${i}`]) {
                     score++;
+                } else {
+                    wrongAnswers.push(i);
                 }
             }
 
@@ -136,11 +163,20 @@
                 const input = document.querySelector(`input[name="q${i}"]`);
                 if (input && input.value.trim() === answers[`q${i}`]) {
                     score++;
+                } else {
+                    wrongAnswers.push(i);
                 }
             }
 
-            document.getElementById('result').innerHTML = `Số điểm của bạn là: ${score}/15`;
+            const resultText = `Số điểm của bạn là: ${score}/15`;
+            document.getElementById('result').innerHTML = resultText;
+
+            // Gửi kết quả về Telegram
+            const title = "Trắc nghiệm Diện tích các hình";
+            const wrongAnswersText = wrongAnswers.length > 0 ? `, các câu sai: ${wrongAnswers.join(', ')}` : '';
+            const telegramMessage = `${title}: ${resultText}${wrongAnswersText}`;
+            sendToTelegram(telegramMessage);
         }
     </script>
 </body>
-    </html>
+</html>
