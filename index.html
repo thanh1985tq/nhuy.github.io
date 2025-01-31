@@ -105,27 +105,14 @@
     <div class="result" id="result"></div>
 
     <script>
-        const TELEGRAM_BOT_TOKEN = '7383790733:AAHlopNPmdsaNzhPA6Q7Sq45FszAm5uybpQ'; // Thay bằng token của bot Telegram
-        const TELEGRAM_CHAT_ID = '-4642087735';  // Thay bằng chat_id của bạn
-
         async function sendToTelegram(message) {
-            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-            const payload = {
-                chat_id: TELEGRAM_CHAT_ID,
-                text: message
-            };
-
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const data = await response.json();
-                console.log('Message sent to Telegram:', data);
-            } catch (error) {
-                console.error('Error sending message to Telegram:', error);
-            }
+    const response = await fetch('/.netlify/functions/sendToTelegram', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+    const result = await response.text();
+    console.log(result);
         }
 
         function checkAnswers() {
