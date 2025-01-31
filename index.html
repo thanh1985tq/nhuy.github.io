@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm Diện tích các hình</title>
+    <style>
+        .question { font-weight: bold; }
+        .result { font-weight: bold; color: green; }
+    </style>
+</head>
+<body>
+    <h1>Trắc nghiệm Diện tích các hình</h1>
+    <form id="quizForm">
+        <!-- Câu hỏi 1 -->
+        <div class="question">1. Diện tích hình vuông có cạnh 5cm là:</div>
+        <input type="radio" name="q1" value="a"> a) 20cm²<br>
+        <input type="radio" name="q1" value="b"> b) 25cm²<br>
+        <input type="radio" name="q1" value="c"> c) 30cm²<br>
+        <input type="radio" name="q1" value="d"> d) 35cm²<br>
+
+        <!-- Câu hỏi 2 -->
+        <div class="question">2. Diện tích hình chữ nhật có chiều dài 6cm và chiều rộng 4cm là:</div>
+        <input type="radio" name="q2" value="a"> a) 20cm²<br>
+        <input type="radio" name="q2" value="b"> b) 24cm²<br>
+        <input type="radio" name="q2" value="c"> c) 28cm²<br>
+        <input type="radio" name="q2" value="d"> d) 30cm²<br>
+
+        <!-- Câu hỏi 3 -->
+        <div class="question">3. Diện tích hình tròn có bán kính 3cm là (lấy π = 3.14):</div>
+        <input type="radio" name="q3" value="a"> a) 18.84cm²<br>
+        <input type="radio" name="q3" value="b"> b) 28.26cm²<br>
+        <input type="radio" name="q3" value="c"> c) 31.4cm²<br>
+        <input type="radio" name="q3" value="d"> d) 37.68cm²<br>
+
+        <!-- Câu hỏi 4 -->
+        <div class="question">4. Diện tích tam giác có đáy 8cm và chiều cao 5cm là:</div>
+        <input type="radio" name="q4" value="a"> a) 15cm²<br>
+        <input type="radio" name="q4" value="b"> b) 20cm²<br>
+        <input type="radio" name="q4" value="c"> c) 25cm²<br>
+        <input type="radio" name="q4" value="d"> d) 30cm²<br>
+
+        <!-- Câu hỏi 5 -->
+        <div class="question">5. Diện tích hình vuông có cạnh 7cm là:</div>
+        <input type="radio" name="q5" value="a"> a) 49cm²<br>
+        <input type="radio" name="q5" value="b"> b) 42cm²<br>
+        <input type="radio" name="q5" value="c"> c) 56cm²<br>
+        <input type="radio" name="q5" value="d"> d) 64cm²<br>
+
+        <!-- Câu hỏi 6 -->
+        <div class="question">6. Diện tích hình chữ nhật có chiều dài 10cm và chiều rộng 3cm là:</div>
+        <input type="radio" name="q6" value="a"> a) 30cm²<br>
+        <input type="radio" name="q6" value="b"> b) 33cm²<br>
+        <input type="radio" name="q6" value="c"> c) 36cm²<br>
+        <input type="radio" name="q6" value="d"> d) 39cm²<br>
+
+        <!-- Câu hỏi 7 -->
+        <div class="question">7. Diện tích hình tròn có bán kính 5cm là (lấy π = 3.14):</div>
+        <input type="radio" name="q7" value="a"> a) 78.5cm²<br>
+        <input type="radio" name="q7" value="b"> b) 75.8cm²<br>
+        <input type="radio" name="q7" value="c"> c) 80.5cm²<br>
+        <input type="radio" name="q7" value="d"> d) 85.7cm²<br>
+
+        <!-- Câu hỏi 8 -->
+        <div class="question">8. Diện tích tam giác có đáy 12cm và chiều cao 7cm là:</div>
+        <input type="radio" name="q8" value="a"> a) 42cm²<br>
+        <input type="radio" name="q8" value="b"> b) 49cm²<br>
+        <input type="radio" name="q8" value="c"> c) 56cm²<br>
+        <input type="radio" name="q8" value="d"> d) 63cm²<br>
+
+        <!-- Câu hỏi 9 -->
+        <div class="question">9. Diện tích hình vuông có cạnh 9cm là:</div>
+        <input type="radio" name="q9" value="a"> a) 81cm²<br>
+        <input type="radio" name="q9" value="b"> b) 72cm²<br>
+        <input type="radio" name="q9" value="c"> c) 90cm²<br>
+        <input type="radio" name="q9" value="d"> d) 99cm²<br>
+
+        <!-- Câu hỏi 10 -->
+        <div class="question">10. Diện tích hình chữ nhật có chiều dài 15cm và chiều rộng 6cm là:</div>
+        <input type="radio" name="q10" value="a"> a) 80cm²<br>
+        <input type="radio" name="q10" value="b"> b) 90cm²<br>
+        <input type="radio" name="q10" value="c"> c) 100cm²<br>
+        <input type="radio" name="q10" value="d"> d) 110cm²<br>
+
+        <br>
+        <button type="button" onclick="checkAnswers()">Kiểm tra</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b',
+                q4: 'b',
+                q5: 'a',
+                q6: 'a',
+                q7: 'a',
+                q8: 'a',
+                q9: 'a',
+                q10: 'b'
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('result').innerHTML = `Số điểm của bạn là: ${score}/10`;
+        }
+    </script>
+</body>
+</html>
