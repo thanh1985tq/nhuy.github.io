@@ -7,6 +7,7 @@
     <style>
         .question { font-weight: bold; }
         .result { font-weight: bold; color: green; }
+        input[type="text"] { width: 100px; }
     </style>
 </head>
 <body>
@@ -82,6 +83,21 @@
         <input type="radio" name="q10" value="c"> c) 100cm²<br>
         <input type="radio" name="q10" value="d"> d) 110cm²<br>
 
+        <!-- Câu hỏi 11: Điền vào chỗ trống -->
+        <div class="question">11. Diện tích hình vuông có cạnh 4cm là: <input type="text" name="q11"> cm²</div>
+
+        <!-- Câu hỏi 12: Điền vào chỗ trống -->
+        <div class="question">12. Diện tích hình chữ nhật có chiều dài 7cm và chiều rộng 3cm là: <input type="text" name="q12"> cm²</div>
+
+        <!-- Câu hỏi 13: Điền vào chỗ trống -->
+        <div class="question">13. Diện tích hình tròn có bán kính 2cm là (lấy π = 3.14): <input type="text" name="q13"> cm²</div>
+
+        <!-- Câu hỏi 14: Điền vào chỗ trống -->
+        <div class="question">14. Diện tích tam giác có đáy 10cm và chiều cao 4cm là: <input type="text" name="q14"> cm²</div>
+
+        <!-- Câu hỏi 15: Điền vào chỗ trống -->
+        <div class="question">15. Diện tích hình vuông có cạnh 6cm là: <input type="text" name="q15"> cm²</div>
+
         <br>
         <button type="button" onclick="checkAnswers()">Kiểm tra</button>
     </form>
@@ -100,7 +116,12 @@
                 q7: 'a',
                 q8: 'a',
                 q9: 'a',
-                q10: 'b'
+                q10: 'b',
+                q11: '16',
+                q12: '21',
+                q13: '12.56',
+                q14: '20',
+                q15: '36'
             };
 
             let score = 0;
@@ -111,8 +132,15 @@
                 }
             }
 
-            document.getElementById('result').innerHTML = `Số điểm của bạn là: ${score}/10`;
+            for (let i = 11; i <= 15; i++) {
+                const input = document.querySelector(`input[name="q${i}"]`);
+                if (input && input.value.trim() === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('result').innerHTML = `Số điểm của bạn là: ${score}/15`;
         }
     </script>
 </body>
-</html>
+    </html>
