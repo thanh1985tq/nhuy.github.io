@@ -1,1 +1,1 @@
-my fist blog for my daugter
+my fist blog for my daugter, phase 2
