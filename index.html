@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chính - Bài tập Toán</title>
-    <link rel="stylesheet" href="styles/main.css"> <!-- Liên kết file CSS -->
+    <title>Toán lớp 5</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Chào mừng đến với trang bài tập Toán</h1>
+    <h1>Toán lớp 5</h1>
+
+    <!-- Menu cha -->
+    <nav>
         <ul>
-            <li><a href="Math/Basic/Exercise1.html">Bài tập 1: Diện tích các hình</a></li>
-            <!-- Thêm các liên kết đến các bài tập khác ở đây -->
+            <li>
+                <a href="#">Toán lớp 5</a>
+                <!-- Menu con -->
+                <ul>
+                    <li><a href="Math/Basic/Exercise1.html">Cơ bản</a></li>
+                    <li><a href="Math/Advance/Exercise1.html">Nâng cao</a></li>
+                    <li><a href="Math/Expert/Exercise1.html">Chuyên gia</a></li>
+                </ul>
+            </li>
         </ul>
+    </nav>
+
+    <!-- Nội dung hiển thị -->
+    <div id="content">
+        <p>Chọn một mục trong menu để xem bài tập.</p>
     </div>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
