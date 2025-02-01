@@ -1,0 +1,35 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.question {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.result {
+    font-weight: bold;
+    color: green;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 100px;
+    margin-left: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
