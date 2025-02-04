@@ -1,0 +1,14 @@
+{
+    "questions": [
+        {
+            "question": "Diện tích hình vuông có cạnh 5cm là:",
+            "options": ["20cm²", "25cm²", "30cm²", "35cm²"],
+            "answer": "b"
+        },
+        {
+            "question": "Diện tích hình chữ nhật có chiều dài 6cm và chiều rộng 4cm là:",
+            "options": ["20cm²", "24cm²", "28cm²", "30cm²"],
+            "answer": "b"
+        }
+    ]
+}

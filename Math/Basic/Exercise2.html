@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn bài tập Toán</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Chọn bài tập Toán</h1>
+
+<div class="dropdown">
+    <label for="exercise-select">Chọn bài tập:</label>
+    <select id="exercise-select">
+        <option value="">-- Chọn bài tập --</option>
+    </select>
+</div>
+
+<form id="quiz">
+    <!-- Các câu hỏi sẽ được thêm vào đây bằng JavaScript -->
+</form>
+
+<div class="result" id="result"></div>
+
+<script>
+    // Bước 1: Tải danh sách các file JSON từ index.json
+    fetch('index.json')
+        .then(response => response.json())
+        .then(data => {
+            const select = document.getElementById('exercise-select');
+            data.files.forEach(file => {
+                const option = document.createElement('option');
+                option.value = file;
+                option.textContent = file.replace('.json', ''); // Hiển thị tên file không có đuôi .json
+                select.appendChild(option);
+            });
+        });
+
+    // Bước 2: Khi người dùng chọn một file JSON, tải dữ liệu từ file đó
+    document.getElementById('exercise-select').addEventListener('change', function (event) {
+        const selectedFile = event.target.value;
+        if (selectedFile) {
+            fetch(selectedFile)
+                .then(response => response.json())
+                .then(data => {
+                    const quizForm = document.getElementById('quiz');
+                    quizForm.innerHTML = ''; // Xóa nội dung cũ
+
+                    // Hiển thị các câu hỏi
+                    data.questions.forEach((q, index) => {
+                        const questionDiv = document.createElement('div');
+                        questionDiv.className = 'question';
+                        questionDiv.innerHTML = `
+                            <p>${index + 1}. ${q.question}</p>
+                            ${q.options.map((option, i) => `
+                                <label><input type="radio" name="q${index + 1}" value="${String.fromCharCode(97 + i)}"> ${option}</label><br>
+                            `).join('')}
+                        `;
+                        quizForm.appendChild(questionDiv);
+                    });
+
+                    // Thêm nút "Kiểm tra"
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.innerText = 'Kiểm tra';
+                    button.onclick = checkAnswers;
+                    quizForm.appendChild(button);
+                });
+        }
+    });
+
+    // Bước 3: Kiểm tra kết quả
+    function checkAnswers() {
+        const selectedFile = document.getElementById('exercise-select').value;
+        if (selectedFile) {
+            fetch(selectedFile)
+                .then(response => response.json())
+                .then(data => {
+                    let score = 0;
+                    data.questions.forEach((q, index) => {
+                        const selected = document.querySelector(`input[name="q${index + 1}"]:checked`);
+                        if (selected && selected.value === q.answer) {
+                            score++;
+                        }
+                    });
+                    document.getElementById('result').innerText = `Số điểm của bạn là: ${score}/${data.questions.length}`;
+                });
+        }
+    }
+</script>
+
+</body>
+</html>

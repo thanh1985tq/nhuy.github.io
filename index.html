@@ -3,32 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toán lớp 5</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>Trang chủ</title>
+	<link rel="stylesheet" href="styles/login_modal.css"> <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="styles/main.css"> <!-- Liên kết file CSS -->
 </head>
 <body>
-    <h1>Toán lớp 5</h1>
-
-    <!-- Menu cha -->
-    <nav>
-        <ul>
-            <li>
-                <a href="#">Toán lớp 5</a>
-                <!-- Menu con -->
-                <ul>
-                    <li><a href="Math/Basic/Exercise1.html">Cơ bản</a></li>
-                    <li><a href="Math/Advance/Exercise1.html">Nâng cao</a></li>
-                    <li><a href="Math/Expert/Exercise1.html">Chuyên gia</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Nội dung hiển thị -->
-    <div id="content">
-        <p>Chọn một mục trong menu để xem bài tập.</p>
+    <!-- Form đăng nhập -->
+    <div id="loginForm" class="login-container">
+        <h2>Đăng nhập</h2>
+        <form id="login">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Đăng nhập</button>
+        </form>
+        <p id="loginError" class="error-message"></p>
     </div>
 
-    <script src="scripts/main.js"></script>
+    <!-- Nội dung chính (sẽ ẩn cho đến khi đăng nhập thành công) -->
+    <div id="mainContent" class="hidden">
+        <h1>Toán lớp 5</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Toán lớp 5</a>
+                    <ul>
+                        <li><a href="Math/Basic/Exercise1.html">Cơ bản</a></li>
+                        <li><a href="Math/Advance/Exercise1.html">Nâng cao</a></li>
+                        <li><a href="Math/Expert/Exercise1.html">Chuyên gia</a></li>
+						<li><a href="Math/Basic/Exercise2.html">Demo</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <p>Chọn một mục trong menu để xem bài tập.</p>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script> <!-- Liên kết file JavaScript -->
 </body>
 </html>

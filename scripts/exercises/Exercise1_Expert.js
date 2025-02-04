@@ -53,27 +53,3 @@ function checkAnswers() {
     // Tô màu đáp án đúng và sai
     highlightAnswers(correctAnswers);
 }
-
-function highlightAnswers(correctAnswers) {
-    // Tô màu câu hỏi trắc nghiệm (1-15)
-    for (let i = 1; i <= 15; i++) {
-        const selected = document.querySelector(`input[name="q${i}"]:checked`);
-        if (selected) {
-            if (selected.value === correctAnswers[`q${i}`]) {
-                selected.parentElement.style.color = "green"; // Đáp án đúng: màu xanh
-            } else {
-                selected.parentElement.style.color = "red"; // Đáp án sai: màu đỏ
-            }
-        }
-    }
-
-    // Tô màu câu hỏi điền vào chỗ trống (16-25)
-    for (let i = 16; i <= 25; i++) {
-        const input = document.querySelector(`input[name="q${i}"]`);
-        if (input.value.trim() === correctAnswers[`q${i}`]) {
-            input.style.borderColor = "green"; // Đáp án đúng: viền xanh
-        } else {
-            input.style.borderColor = "red"; // Đáp án sai: viền đỏ
-        }
-    }
-}
