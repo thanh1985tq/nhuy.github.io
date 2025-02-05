@@ -109,10 +109,10 @@
             "type": "multiple_choice"
         },
         {
-            "answer": "100cm²",
+            "answer": "100",
             "img_src": "",
             "options": [],
-            "question": "Diện tích hình vuông có cạnh 10cm là: ...",
+            "question": "Diện tích hình vuông có cạnh 10cm là: ... cm²",
             "type": "short_answer"
         }
     ]
