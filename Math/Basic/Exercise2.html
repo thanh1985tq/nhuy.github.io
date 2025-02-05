@@ -53,37 +53,71 @@
         });
 
     // Bước 2: Khi người dùng chọn một file JSON, tải dữ liệu từ file đó
-    document.getElementById('exercise-select').addEventListener('change', function (event) {
-        const selectedFile = event.target.value;
-        if (selectedFile) {
-            fetch(selectedFile)
-                .then(response => response.json())
-                .then(data => {
-                    const quizForm = document.getElementById('quiz');
-                    quizForm.innerHTML = ''; // Xóa nội dung cũ
+	document.getElementById('exercise-select').addEventListener('change', function (event) {
+		const selectedFile = event.target.value;
+		if (selectedFile) {
+			fetch(selectedFile)
+				.then(response => response.json())
+				.then(data => {
+					const quizForm = document.getElementById('quiz');
+					quizForm.innerHTML = ''; // Xóa nội dung cũ
 
-                    // Hiển thị các câu hỏi
-                    data.questions.forEach((q, index) => {
-                        const questionDiv = document.createElement('div');
-                        questionDiv.className = 'question';
-                        questionDiv.innerHTML = `
-                            <p>${index + 1}. ${q.question}</p>
-                            ${q.options.map((option, i) => `
-                                <label><input type="radio" name="q${index + 1}" value="${String.fromCharCode(97 + i)}"> ${option}</label><br>
-                            `).join('')}
-                        `;
-                        quizForm.appendChild(questionDiv);
-                    });
+					// Hiển thị các câu hỏi
+					data.questions.forEach((q, index) => {
+						const questionDiv = document.createElement('div');
+						questionDiv.className = 'question';
 
-                    // Thêm nút "Kiểm tra"
-                    const button = document.createElement('button');
-                    button.type = 'button';
-                    button.innerText = 'Kiểm tra';
-                    button.onclick = checkAnswers;
-                    quizForm.appendChild(button);
-                });
-        }
-    });
+						// Tạo phần nội dung câu hỏi dựa theo type
+						let questionContent = `<p>${index + 1}. `;
+
+						if (q.type === 'multiple_choice') {
+							// Với multiple_choice, hiển thị nguyên text câu hỏi
+							questionContent += q.question;
+						} else if (q.type === 'short_answer') {
+							// Với short_answer, thay thế "..." bằng input type="text"
+							// Nếu có nhiều dấu "..." thì tạo input cho mỗi phần
+							const parts = q.question.split('...');
+							for (let i = 0; i < parts.length; i++) {
+								questionContent += parts[i];
+								if (i < parts.length - 1) {
+									// Đặt tên input theo index câu hỏi và thứ tự input
+									questionContent += `<input type="text" name="q${index + 1}_${i}" />`;
+								}
+							}
+						}
+						questionContent += `</p>`;
+
+						// Nếu img_src có giá trị thì nhúng thẻ img sau câu hỏi
+						if (q.img_src && q.img_src.trim() !== "") {
+							questionContent += `<img src="${q.img_src}" alt="Question image" />`;
+						}
+
+						// Gắn nội dung câu hỏi vào div
+						questionDiv.innerHTML = questionContent;
+
+						// Nếu type là multiple_choice thì tạo các input radio cho từng lựa chọn
+						if (q.type === 'multiple_choice') {
+							q.options.forEach((option, i) => {
+								const optionLabel = document.createElement('label');
+								optionLabel.innerHTML = `<input type="radio" name="q${index + 1}" value="${String.fromCharCode(97 + i)}"> ${option}`;
+								questionDiv.appendChild(optionLabel);
+								// Thêm xuống dòng sau mỗi lựa chọn
+								questionDiv.appendChild(document.createElement('br'));
+							});
+						}
+						
+						quizForm.appendChild(questionDiv);
+					});
+
+					// Thêm nút "Kiểm tra"
+					const button = document.createElement('button');
+					button.type = 'button';
+					button.innerText = 'Kiểm tra';
+					button.onclick = checkAnswers;
+					quizForm.appendChild(button);
+				});
+		}
+	});
 
     // Bước 3: Kiểm tra kết quả
     function checkAnswers() {

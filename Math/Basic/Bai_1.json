@@ -1,14 +1,119 @@
 {
     "questions": [
         {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "20cm²",
+                "25cm²",
+                "30cm²",
+                "35cm²"
+            ],
             "question": "Diện tích hình vuông có cạnh 5cm là:",
-            "options": ["20cm²", "25cm²", "30cm²", "35cm²"],
-            "answer": "b"
+            "type": "multiple_choice"
         },
         {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "20cm²",
+                "24cm²",
+                "28cm²",
+                "30cm²"
+            ],
             "question": "Diện tích hình chữ nhật có chiều dài 6cm và chiều rộng 4cm là:",
-            "options": ["20cm²", "24cm²", "28cm²", "30cm²"],
-            "answer": "b"
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "42cm²",
+                "49cm²",
+                "56cm²",
+                "63cm²"
+            ],
+            "question": "Diện tích hình vuông có cạnh 7cm là:",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "35cm²",
+                "40cm²",
+                "45cm²",
+                "50cm²"
+            ],
+            "question": "Diện tích hình chữ nhật có chiều dài 8cm và chiều rộng 5cm là:",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "30cm²",
+                "25cm²",
+                "35cm²",
+                "40cm²"
+            ],
+            "question": "Diện tích hình tam giác có đáy 10cm và chiều cao 6cm là:",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "28.26cm²",
+                "18.84cm²",
+                "25.12cm²",
+                "30.12cm²"
+            ],
+            "question": "Diện tích hình tròn có bán kính 3cm là:",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "90cm²",
+                "100cm²",
+                "110cm²",
+                "120cm²"
+            ],
+            "question": "Diện tích hình vuông có cạnh 10cm là:",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "27cm²",
+                "30cm²",
+                "33cm²",
+                "36cm²"
+            ],
+            "question": "Diện tích hình chữ nhật có chiều dài 9cm và chiều rộng 3cm là:",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "54cm²",
+                "60cm²",
+                "66cm²",
+                "72cm²"
+            ],
+            "question": "Diện tích hình tam giác có đáy 12cm và chiều cao 9cm là:",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "100cm²",
+            "img_src": "",
+            "options": [],
+            "question": "Diện tích hình vuông có cạnh 10cm là: ...",
+            "type": "short_answer"
         }
     ]
 }
