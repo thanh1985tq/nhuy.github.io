@@ -120,23 +120,32 @@
 	});
 
     // Bước 3: Kiểm tra kết quả
-    function checkAnswers() {
-        const selectedFile = document.getElementById('exercise-select').value;
-        if (selectedFile) {
-            fetch(selectedFile)
-                .then(response => response.json())
-                .then(data => {
-                    let score = 0;
-                    data.questions.forEach((q, index) => {
-                        const selected = document.querySelector(`input[name="q${index + 1}"]:checked`);
-                        if (selected && selected.value === q.answer) {
-                            score++;
-                        }
-                    });
-                    document.getElementById('result').innerText = `Số điểm của bạn là: ${score}/${data.questions.length}`;
-                });
-        }
-    }
+	function checkAnswers() {
+		const selectedFile = document.getElementById('exercise-select').value;
+		if (selectedFile) {
+			fetch(selectedFile)
+				.then(response => response.json())
+				.then(data => {
+					let score = 0;
+					data.questions.forEach((q, index) => {
+						if (q.type === 'multiple_choice') {
+							const selected = document.querySelector(`input[name="q${index + 1}"]:checked`);
+							if (selected && selected.value === q.answer) {
+								score++;
+							}
+						} else if (q.type === 'short_answer') {
+							// Giả sử mỗi câu short_answer chỉ có một input (đặt tên là "q{index+1}_0")
+							const inputField = document.querySelector(`input[name="q${index + 1}_0"]`);
+							if (inputField && inputField.value.trim().toLowerCase() === q.answer.trim().toLowerCase()) {
+								score++;
+							}
+						}
+					});
+					document.getElementById('result').innerText = `Số điểm của bạn là: ${score}/${data.questions.length}`;
+				});
+		}
+	}
+
 </script>
 
 </body>
