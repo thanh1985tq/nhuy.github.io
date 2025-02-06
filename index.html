@@ -37,9 +37,15 @@
     /* Nội dung bên phải chiếm không gian còn lại */
     .content {
       flex: 1;
+      position: relative;
       padding: 20px;
       box-sizing: border-box;
       transition: margin-left 0.3s;
+    }
+	.content iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
     /* Nút toggle sidebar sử dụng icon */
     .toggle-button {
@@ -124,8 +130,8 @@
 
     <!-- Nội dung hiển thị bên phải -->
     <div class="content" id="content">
-      <h2>Chào mừng đến với hệ thống trắc nghiệm</h2>
-      <p>Vui lòng chọn một bài tập từ menu bên trái.</p>
+      <!-- The iframe below will load the selected page -->
+      <iframe id="contentFrame" src="" title="Content"></iframe>
     </div>
   </div>
 
@@ -156,25 +162,12 @@
       });
     });
 
-    // Xử lý sự kiện click cho các link submenu để tải nội dung vào vùng content
     document.querySelectorAll('.submenu a').forEach(link => {
       link.addEventListener('click', function(event) {
         event.preventDefault();
         const page = this.getAttribute('data-page');
         if (page) {
-          fetch(page)
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Không tìm thấy trang: ' + page);
-              }
-              return response.text();
-            })
-            .then(html => {
-              document.getElementById('content').innerHTML = html;
-            })
-            .catch(error => {
-              document.getElementById('content').innerHTML = `<p>Lỗi tải trang: ${error.message}</p>`;
-            });
+          document.getElementById('contentFrame').src = page;
         }
       });
     });
