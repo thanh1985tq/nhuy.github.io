@@ -1,49 +1,183 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
-	<link rel="stylesheet" href="styles/login_modal.css"> <!-- Liên kết file CSS -->
-    <link rel="stylesheet" href="styles/main.css"> <!-- Liên kết file CSS -->
+  <meta charset="UTF-8">
+  <title>Menu với Submenu và Toggle Sidebar</title>
+  <style>
+    /* Đặt lại style cơ bản cho body */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Container bao gồm sidebar và content */
+    .container {
+      position: relative; /* để các phần tử con có thể định vị tuyệt đối theo container này */
+      display: flex;
+      height: 100vh;
+      transition: all 0.3s;
+    }
+    /* Sidebar cố định bên trái */
+    .sidebar {
+      width: 250px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      box-sizing: border-box;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+      transition: width 0.3s, padding 0.3s;
+	  margin-top: 20px;
+    }
+    /* Khi sidebar bị ẩn */
+    .sidebar.hidden {
+      width: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden;
+    }
+    /* Nội dung bên phải chiếm không gian còn lại */
+    .content {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: margin-left 0.3s;
+    }
+    /* Nút toggle sidebar sử dụng icon */
+    .toggle-button {
+      position: absolute;
+      top: 10px;
+      left: 200px; /* Khi sidebar hiện, đặt ngay bên phải */
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: left 0.3s;
+      padding: 0;
+    }
+    /* Khi sidebar ẩn, di chuyển icon về góc trên bên trái */
+    .sidebar.hidden ~ .toggle-button {
+      left: 10px;
+    }
+    /* Nếu sử dụng JavaScript để cập nhật vị trí, ta sẽ thay đổi style trực tiếp */
+    
+    /* Style cho button menu cha */
+    .menu-button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      transition: background-color 0.3s;
+      margin-bottom: 5px;
+    }
+    .menu-button:hover {
+      background-color: #0056b3;
+    }
+    /* Style cho submenu (ẩn theo mặc định) */
+    .submenu {
+      display: none;
+      margin-top: 5px;
+      list-style: none;
+      padding-left: 15px;
+    }
+    .submenu li {
+      margin-bottom: 5px;
+    }
+    .submenu li a {
+      text-decoration: none;
+      color: #333;
+      padding: 5px 10px;
+      display: block;
+      transition: background-color 0.3s;
+    }
+    .submenu li a:hover {
+      background-color: #e2e6ea;
+    }
+  </style>
 </head>
 <body>
-    <!-- Form đăng nhập -->
-    <div id="loginForm" class="login-container">
-        <h2>Đăng nhập</h2>
-        <form id="login">
-            <label for="username">Tên đăng nhập:</label>
-            <input type="text" id="username" name="username" required>
-            <br>
-            <label for="password">Mật khẩu:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <button type="submit">Đăng nhập</button>
-        </form>
-        <p id="loginError" class="error-message"></p>
+  <!-- Container bao gồm sidebar, toggle button và content -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <!-- Menu cha: TOÁN -->
+      <button class="menu-button" data-target="toan-submenu">TOÁN</button>
+      <ul class="submenu" id="toan-submenu">
+        <li><a data-page="https://thanh1985tq.github.io/nhuy.github.io/Math/Basic/Exercise2.html">Cơ bản</a></li>
+        <li><a data-page="Math/Advanced/toan_nang_cao.html">Nâng cao</a></li>
+      </ul>
+      
+      <!-- Menu cha: TIẾNG ANH -->
+      <button class="menu-button" data-target="tieng-anh-submenu">TIẾNG ANH</button>
+      <ul class="submenu" id="tieng-anh-submenu">
+        <li><a data-page="English/Basic/tieng_anh_co_ban.html">Cơ bản</a></li>
+        <li><a data-page="English/Advanced/tieng_anh_nang_cao.html">Nâng cao</a></li>
+      </ul>
     </div>
 
-    <!-- Nội dung chính (sẽ ẩn cho đến khi đăng nhập thành công) -->
-    <div id="mainContent" class="hidden">
-        <h1>Toán lớp 5</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">Toán lớp 5</a>
-                    <ul>
-                        <li><a href="Math/Basic/Exercise1.html">Cơ bản</a></li>
-                        <li><a href="Math/Advance/Exercise1.html">Nâng cao</a></li>
-                        <li><a href="Math/Expert/Exercise1.html">Chuyên gia</a></li>
-						<li><a href="Math/Basic/Exercise2.html">Demo</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="content">
-            <p>Chọn một mục trong menu để xem bài tập.</p>
-        </div>
-    </div>
+    <!-- Nút toggle hiển thị icon -->
+    <button class="toggle-button" id="toggleSidebar">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAKUlEQVR4nO3TwQkAQBACMftv2itiQThIwLevSfhBR8vsCPaqIzirjph63j2bZfjaWHEAAAAASUVORK5CYII=" alt="menu">
+    </button>
 
-    <script src="scripts/main.js"></script> <!-- Liên kết file JavaScript -->
+    <!-- Nội dung hiển thị bên phải -->
+    <div class="content" id="content">
+      <h2>Chào mừng đến với hệ thống trắc nghiệm</h2>
+      <p>Vui lòng chọn một bài tập từ menu bên trái.</p>
+    </div>
+  </div>
+
+  <script>
+    // Xử lý toggle sidebar với icon
+    const toggleButton = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('sidebar');
+
+    toggleButton.addEventListener('click', function() {
+      sidebar.classList.toggle('hidden');
+      // Cập nhật vị trí của toggle button dựa theo trạng thái sidebar
+      if (sidebar.classList.contains('hidden')) {
+        toggleButton.style.left = '10px';
+      } else {
+        toggleButton.style.left = '200px';
+      }
+    });
+
+    // Xử lý sự kiện click cho các button menu cha để hiển thị/ẩn submenu
+    document.querySelectorAll('.menu-button').forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const submenu = document.getElementById(targetId);
+        if (submenu) {
+          // Toggle hiển thị submenu
+          submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+      });
+    });
+
+    // Xử lý sự kiện click cho các link submenu để tải nội dung vào vùng content
+    document.querySelectorAll('.submenu a').forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const page = this.getAttribute('data-page');
+        if (page) {
+          fetch(page)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Không tìm thấy trang: ' + page);
+              }
+              return response.text();
+            })
+            .then(html => {
+              document.getElementById('content').innerHTML = html;
+            })
+            .catch(error => {
+              document.getElementById('content').innerHTML = `<p>Lỗi tải trang: ${error.message}</p>`;
+            });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
