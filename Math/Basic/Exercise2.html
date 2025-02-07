@@ -58,11 +58,6 @@
       });
   });
   
-  // Kiểm tra giá trị được chọn (debug)
-  $('#exercise-select').on('change', function() {
-	  console.log('Đường dẫn file được chọn:', $(this).val());
-  });  
-
   // Biến toàn cục để theo dõi trạng thái form đã thay đổi (dirty state)
   let isDirty = false;
   // Biến lưu giá trị lựa chọn trước đó của select, dùng để quay lại nếu người dùng hủy chuyển bài
@@ -127,9 +122,8 @@
       // Nếu người dùng xác nhận chuyển bài hoặc form chưa bị thay đổi:
       // Reset lại biến isDirty và cập nhật giá trị chọn hiện tại
       isDirty = false;
-      previousValue = event.target.value;
+      previousValue = $(this).val();
 
-	  console.log("Giá trị được chọn:", $(this).val());  // In ra console để kiểm tra giá trị
       const selectedFile = $(this).val();
       if (selectedFile) {
           fetch(selectedFile)
