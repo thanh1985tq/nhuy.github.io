@@ -1,194 +1,210 @@
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chọn bài tập Toán</title>
-    <style>
-        .question {
-            margin-bottom: 20px;
-        }
-        .result {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .dropdown {
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chọn bài tập Toán</title>
+  <style>
+      .question {
+          margin-bottom: 20px;
+      }
+      .result {
+          margin-top: 20px;
+          font-weight: bold;
+      }
+      .dropdown {
+          margin-bottom: 20px;
+      }
+  </style>
+  <!-- Thêm CSS của Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
 
 <h1>Chọn bài tập Toán</h1>
 
 <div class="dropdown">
-    <label for="exercise-select">Chọn bài tập:</label>
-    <select id="exercise-select">
-        <option value="">-- Chọn bài tập --</option>
-    </select>
+  <label for="exercise-select">Chọn bài tập:</label>
+  <select id="exercise-select">
+      <option value="">-- Chọn bài tập --</option>
+  </select>
 </div>
 
 <form id="quiz">
-    <!-- Các câu hỏi sẽ được thêm vào đây bằng JavaScript -->
+  <!-- Các câu hỏi sẽ được thêm vào đây bằng JavaScript -->
 </form>
 
 <div class="result" id="result"></div>
 
+<!-- Thêm jQuery (Select2 phụ thuộc vào jQuery) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Thêm JS của Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <script>
-    // Biến toàn cục để theo dõi trạng thái form đã thay đổi (dirty state)
-    let isDirty = false;
-    // Biến lưu giá trị lựa chọn trước đó của select, dùng để quay lại nếu người dùng hủy chuyển bài
-    let previousValue = document.getElementById('exercise-select').value;
-    
-    // Lắng nghe thay đổi trên form: bất kỳ input nào (text hoặc radio) sẽ đánh dấu form là đã thay đổi
-    document.getElementById('quiz').addEventListener('input', function(e) {
-        if (e.target.matches('input[type="text"], input[type="radio"]')) {
-            isDirty = true;
-        }
-    });
+  // Khi DOM đã sẵn sàng, khởi tạo Select2 cho dropdown có id "exercise-select"
+  $(document).ready(function() {
+      $('#exercise-select').select2({
+          placeholder: "-- Chọn bài tập --",
+          width: 'resolve'
+      });
+  });
 
-    // Bắt các sự kiện bàn phím để cảnh báo nếu form đang dirty:
-    window.addEventListener('keydown', function(e) {
-        // F5: keyCode === 116
-        // Enter: keyCode === 13, chỉ bắt nếu focus không ở INPUT hay TEXTAREA
-        if ((e.keyCode === 116) || (e.keyCode === 13 && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName))) {
-            if (isDirty) {
-                const confirmLeave = confirm("Bài tập đang được làm, bạn có muốn rời khỏi trang?");
-                if (!confirmLeave) {
-                    e.preventDefault();
-                    // Nếu là F5, chặn luôn hành động làm mới
-                    return false;
-                }
-            }
-        }
-    });
+  // Biến toàn cục để theo dõi trạng thái form đã thay đổi (dirty state)
+  let isDirty = false;
+  // Biến lưu giá trị lựa chọn trước đó của select, dùng để quay lại nếu người dùng hủy chuyển bài
+  let previousValue = document.getElementById('exercise-select').value;
+  
+  // Lắng nghe thay đổi trên form: bất kỳ input nào (text hoặc radio) sẽ đánh dấu form là đã thay đổi
+  document.getElementById('quiz').addEventListener('input', function(e) {
+      if (e.target.matches('input[type="text"], input[type="radio"]')) {
+          isDirty = true;
+      }
+  });
 
-    // Bắt sự kiện beforeunload để cảnh báo khi người dùng cố gắng tải lại hoặc rời khỏi trang
-    window.addEventListener('beforeunload', function(e) {
-        if (isDirty) {
-            e.preventDefault();
-            e.returnValue = '';  // Bắt buộc phải gán để trình duyệt hiển thị hộp thoại cảnh báo
-        }
-    });
+  // Bắt các sự kiện bàn phím để cảnh báo nếu form đang dirty:
+  window.addEventListener('keydown', function(e) {
+      // F5: keyCode === 116
+      // Enter: keyCode === 13, chỉ bắt nếu focus không ở INPUT hay TEXTAREA
+      if ((e.keyCode === 116) || (e.keyCode === 13 && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName))) {
+          if (isDirty) {
+              const confirmLeave = confirm("Bài tập đang được làm, bạn có muốn rời khỏi trang?");
+              if (!confirmLeave) {
+                  e.preventDefault();
+                  return false;
+              }
+          }
+      }
+  });
 
-    // Bước 1: Tải danh sách các file JSON từ index.json
-    fetch('index.json')
-        .then(response => response.json())
-        .then(data => {
-            const select = document.getElementById('exercise-select');
-            data.files.forEach(file => {
-                const option = document.createElement('option');
-                option.value = file;
-                option.textContent = file.replace('.json', ''); // Hiển thị tên file không có đuôi .json
-                select.appendChild(option);
-            });
-        });
+  // Bắt sự kiện beforeunload để cảnh báo khi người dùng cố gắng tải lại hoặc rời khỏi trang
+  window.addEventListener('beforeunload', function(e) {
+      if (isDirty) {
+          e.preventDefault();
+          e.returnValue = '';  // Bắt buộc phải gán để trình duyệt hiển thị hộp thoại cảnh báo
+      }
+  });
 
-    // Bước 2: Khi người dùng chọn một file JSON, tải dữ liệu từ file đó
-    document.getElementById('exercise-select').addEventListener('change', function (event) {
-        // Nếu form có dữ liệu đã thay đổi, hỏi người dùng xác nhận chuyển bài
-        if (isDirty) {
-            const confirmChange = confirm("Bài tập đang được làm, bạn có muốn chọn bài mới?");
-            if (!confirmChange) {
-                // Nếu người dùng không xác nhận, quay lại giá trị trước đó của select
-                event.target.value = previousValue;
-                return;
-            }
-        }
-        // Nếu người dùng xác nhận chuyển bài hoặc form chưa bị thay đổi:
-        // Reset lại biến isDirty và cập nhật giá trị chọn hiện tại
-        isDirty = false;
-        previousValue = event.target.value;
+  // Bước 1: Tải danh sách các file JSON từ index.json (cấu trúc mới)
+  fetch('index.json')
+      .then(response => response.json())
+      .then(data => {
+          const select = document.getElementById('exercise-select');
+          data.files.forEach(fileObj => {
+              const option = document.createElement('option');
+              option.value = fileObj.path;      // Giá trị dùng để load file JSON
+              option.textContent = fileObj.name;  // Tên hiển thị trong dropdown (có Unicode)
+              select.appendChild(option);
+          });
+          // Sau khi thêm option, cập nhật lại Select2 để nó nhận được các thay đổi mới
+          $('#exercise-select').trigger('change');
+      });
 
-        const selectedFile = event.target.value;
-        if (selectedFile) {
-            fetch(selectedFile)
-                .then(response => response.json())
-                .then(data => {
-                    const quizForm = document.getElementById('quiz');
-                    quizForm.innerHTML = ''; // Xóa nội dung cũ
+  // Bước 2: Khi người dùng chọn một file JSON, tải dữ liệu từ file đó
+  document.getElementById('exercise-select').addEventListener('change', function (event) {
+      // Nếu form có dữ liệu đã thay đổi, hỏi người dùng xác nhận chuyển bài
+      if (isDirty) {
+          const confirmChange = confirm("Bài tập đang được làm, bạn có muốn chọn bài mới?");
+          if (!confirmChange) {
+              // Nếu người dùng không xác nhận, quay lại giá trị trước đó của select
+              $('#exercise-select').val(previousValue).trigger('change');
+              return;
+          }
+      }
+      // Nếu người dùng xác nhận chuyển bài hoặc form chưa bị thay đổi:
+      // Reset lại biến isDirty và cập nhật giá trị chọn hiện tại
+      isDirty = false;
+      previousValue = event.target.value;
 
-                    // Hiển thị các câu hỏi
-                    data.questions.forEach((q, index) => {
-                        const questionDiv = document.createElement('div');
-                        questionDiv.className = 'question';
+      const selectedFile = event.target.value;
+      if (selectedFile) {
+          fetch(selectedFile)
+              .then(response => response.json())
+              .then(data => {
+                  const quizForm = document.getElementById('quiz');
+                  quizForm.innerHTML = ''; // Xóa nội dung cũ
 
-                        // Tạo phần nội dung câu hỏi dựa theo type
-                        let questionContent = `<p><strong>${index + 1}. `;
-                        if (q.type === 'multiple_choice') {
-                            // Với multiple_choice, hiển thị nguyên text câu hỏi
-                            questionContent += q.question;
-                        } else if (q.type === 'short_answer') {
-                            // Với short_answer, thay thế "..." bằng input type="text"
-                            // Nếu có nhiều dấu "..." thì tạo input cho mỗi phần
-                            const parts = q.question.split('...');
-                            for (let i = 0; i < parts.length; i++) {
-                                questionContent += parts[i];
-                                if (i < parts.length - 1) {
-                                    // Đặt tên input theo index câu hỏi và thứ tự input
-                                    questionContent += `<input type="text" name="q${index + 1}_${i}" />`;
-                                }
-                            }
-                        }
-                        questionContent += `</strong></p>`;
+                  // Hiển thị các câu hỏi
+                  data.questions.forEach((q, index) => {
+                      const questionDiv = document.createElement('div');
+                      questionDiv.className = 'question';
 
-                        // Nếu img_src có giá trị thì nhúng thẻ img sau câu hỏi
-                        if (q.img_src && q.img_src.trim() !== "") {
-                            questionContent += `<img src="${q.img_src}" alt="Question image" />`;
-                        }
+                      // Tạo phần nội dung câu hỏi dựa theo type
+                      let questionContent = `<p><strong>${index + 1}. `;
+                      if (q.type === 'multiple_choice') {
+                          // Với multiple_choice, hiển thị nguyên text câu hỏi
+                          questionContent += q.question;
+                      } else if (q.type === 'short_answer') {
+                          // Với short_answer, thay thế "..." bằng input type="text"
+                          // Nếu có nhiều dấu "..." thì tạo input cho mỗi phần
+                          const parts = q.question.split('...');
+                          for (let i = 0; i < parts.length; i++) {
+                              questionContent += parts[i];
+                              if (i < parts.length - 1) {
+                                  // Đặt tên input theo index câu hỏi và thứ tự input
+                                  questionContent += `<input type="text" name="q${index + 1}_${i}" />`;
+                              }
+                          }
+                      }
+                      questionContent += `</strong></p>`;
 
-                        // Gắn nội dung câu hỏi vào div
-                        questionDiv.innerHTML = questionContent;
+                      // Nếu img_src có giá trị thì nhúng thẻ img sau câu hỏi
+                      if (q.img_src && q.img_src.trim() !== "") {
+                          questionContent += `<img src="${q.img_src}" alt="Question image" />`;
+                      }
 
-                        // Nếu type là multiple_choice thì tạo các input radio cho từng lựa chọn
-                        if (q.type === 'multiple_choice') {
-                            q.options.forEach((option, i) => {
-                                const optionLabel = document.createElement('label');
-                                optionLabel.innerHTML = `<input type="radio" name="q${index + 1}" value="${String.fromCharCode(97 + i)}"> ${option}`;
-                                questionDiv.appendChild(optionLabel);
-                                // Thêm xuống dòng sau mỗi lựa chọn
-                                questionDiv.appendChild(document.createElement('br'));
-                            });
-                        }
-                        
-                        quizForm.appendChild(questionDiv);
-                    });
+                      // Gắn nội dung câu hỏi vào div
+                      questionDiv.innerHTML = questionContent;
 
-                    // Thêm nút "Kiểm tra"
-                    const button = document.createElement('button');
-                    button.type = 'button';
-                    button.innerText = 'Kiểm tra';
-                    button.onclick = checkAnswers;
-                    quizForm.appendChild(button);
-                });
-        }
-    });
+                      // Nếu type là multiple_choice thì tạo các input radio cho từng lựa chọn
+                      if (q.type === 'multiple_choice') {
+                          q.options.forEach((option, i) => {
+                              const optionLabel = document.createElement('label');
+                              optionLabel.innerHTML = `<input type="radio" name="q${index + 1}" value="${String.fromCharCode(97 + i)}"> ${option}`;
+                              questionDiv.appendChild(optionLabel);
+                              // Thêm xuống dòng sau mỗi lựa chọn
+                              questionDiv.appendChild(document.createElement('br'));
+                          });
+                      }
+                      
+                      quizForm.appendChild(questionDiv);
+                  });
 
-    // Bước 3: Kiểm tra kết quả
-    function checkAnswers() {
-        const selectedFile = document.getElementById('exercise-select').value;
-        if (selectedFile) {
-            fetch(selectedFile)
-                .then(response => response.json())
-                .then(data => {
-                    let score = 0;
-                    data.questions.forEach((q, index) => {
-                        if (q.type === 'multiple_choice') {
-                            const selected = document.querySelector(`input[name="q${index + 1}"]:checked`);
-                            if (selected && selected.value === q.answer) {
-                                score++;
-                            }
-                        } else if (q.type === 'short_answer') {
-                            // Giả sử mỗi câu short_answer chỉ có một input (đặt tên là "q{index+1}_0")
-                            const inputField = document.querySelector(`input[name="q${index + 1}_0"]`);
-                            if (inputField && inputField.value.trim().toLowerCase() === q.answer.trim().toLowerCase()) {
-                                score++;
-                            }
-                        }
-                    });
-                    document.getElementById('result').innerText = `Số điểm của bạn là: ${score}/${data.questions.length}`;
-                });
-        }
-    }
+                  // Thêm nút "Kiểm tra"
+                  const button = document.createElement('button');
+                  button.type = 'button';
+                  button.innerText = 'Kiểm tra';
+                  button.onclick = checkAnswers;
+                  quizForm.appendChild(button);
+              });
+      }
+  });
+
+  // Bước 3: Kiểm tra kết quả
+  function checkAnswers() {
+      const selectedFile = document.getElementById('exercise-select').value;
+      if (selectedFile) {
+          fetch(selectedFile)
+              .then(response => response.json())
+              .then(data => {
+                  let score = 0;
+                  data.questions.forEach((q, index) => {
+                      if (q.type === 'multiple_choice') {
+                          const selected = document.querySelector(`input[name="q${index + 1}"]:checked`);
+                          if (selected && selected.value === q.answer) {
+                              score++;
+                          }
+                      } else if (q.type === 'short_answer') {
+                          // Giả sử mỗi câu short_answer chỉ có một input (đặt tên là "q{index+1}_0")
+                          const inputField = document.querySelector(`input[name="q${index + 1}_0"]`);
+                          if (inputField && inputField.value.trim().toLowerCase() === q.answer.trim().toLowerCase()) {
+                              score++;
+                          }
+                      }
+                  });
+                  document.getElementById('result').innerText = `Số điểm của bạn là: ${score}/${data.questions.length}`;
+              });
+      }
+  }
 </script>
 
 </body>

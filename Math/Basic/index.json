@@ -1,7 +1,12 @@
 {
     "files": [
-        "Bai_1.json",
-        "Ty_so_phan_tram_1.json",
-        "Exercise_3.json"
+        {
+            "name": "Diện tích các hình 1",
+            "path": "Bai_1.json"
+        },
+		{
+            "name": "Tỷ số phần trăm 1",
+            "path": "Ty_so_phan_tram_1.json"
+        }
     ]
 }
