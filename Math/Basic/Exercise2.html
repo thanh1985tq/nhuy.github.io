@@ -129,6 +129,7 @@
       isDirty = false;
       previousValue = event.target.value;
 
+	  console.log("Giá trị được chọn:", event.target.value);  // In ra console để kiểm tra giá trị
       const selectedFile = event.target.value;
       if (selectedFile) {
           fetch(selectedFile)
