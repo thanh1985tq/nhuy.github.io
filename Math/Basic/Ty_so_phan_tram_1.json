@@ -1,0 +1,376 @@
+{
+  "questions": [
+    {
+      "question": "Chuyển 35% thành phân số tối giản:",
+      "options": [
+        "7/20",
+        "35/100",
+        "5/12",
+        "3/8"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển 80% thành phân số tối giản:",
+      "options": [
+        "8/10",
+        "4/5",
+        "2/3",
+        "5/6"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển 25% thành phân số tối giản:",
+      "options": [
+        "1/4",
+        "5/20",
+        "3/8",
+        "2/5"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển 60% thành phân số tối giản:",
+      "options": [
+        "6/10",
+        "3/5",
+        "4/7",
+        "2/3"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển 90% thành phân số tối giản:",
+      "options": [
+        "9/10",
+        "3/4",
+        "2/5",
+        "7/9"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển số thập phân 0,45 thành tỷ số phần trăm:",
+      "options": [
+        "4,5%",
+        "45%",
+        "450%",
+        "0,45%"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển số thập phân 0,08 thành tỷ số phần trăm:",
+      "options": [
+        "8%",
+        "0,8%",
+        "80%",
+        "0,08%"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển số thập phân 1,75 thành tỷ số phần trăm:",
+      "options": [
+        "175%",
+        "17,5%",
+        "1,75%",
+        "100,75%"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển số thập phân 0,6 thành tỷ số phần trăm:",
+      "options": [
+        "60%",
+        "6%",
+        "0,6%",
+        "600%"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Chuyển số thập phân 2,5 thành tỷ số phần trăm:",
+      "options": [
+        "25%",
+        "2,5%",
+        "250%",
+        "200%"
+      ],
+      "answer": "c",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Tỷ số phần trăm của 25 và 50 là:",
+      "options": [
+        "50%",
+        "25%",
+        "75%",
+        "40%"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Tỷ số phần trăm của 18 và 30 là:",
+      "options": [
+        "60%",
+        "80%",
+        "50%",
+        "40%"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Tỷ số phần trăm của 45 và 90 là:",
+      "options": [
+        "25%",
+        "50%",
+        "75%",
+        "90%"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Tỷ số phần trăm của 9 và 20 là:",
+      "options": [
+        "25%",
+        "45%",
+        "55%",
+        "30%"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Tỷ số phần trăm của 21 và 35 là:",
+      "options": [
+        "55%",
+        "40%",
+        "60%",
+        "70%"
+      ],
+      "answer": "c",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "10% của 200 là:",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "40"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "25% của 80 là:",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ],
+      "answer": "c",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "50% của 60 là:",
+      "options": [
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "12% của 500 là:",
+      "options": [
+        "50",
+        "60",
+        "70",
+        "80"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "8% của 250 là:",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ],
+      "answer": "c",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một tiệm bánh sản xuất 240 cái bánh mỗi ngày, trong đó bánh ngọt chiếm 60%. Tiệm bánh bán 75% số bánh ngọt trong ngày. Hỏi số bánh ngọt còn lại là bao nhiêu?",
+      "options": [
+        "Tính số bánh đã bán → Tính tổng số bánh ngọt đã sản xuất → Tính số bánh còn lại",
+        "Tính tổng số bánh ngọt đã sản xuất → Tính số bánh đã bán → Tính số bánh còn lại",
+        "Tính số bánh còn lại → Tính số bánh đã bán → Tính tổng số bánh ngọt đã sản xuất"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một cửa hàng có 500 sản phẩm, trong đó 40% là sản phẩm cao cấp. Cửa hàng bán 30% số sản phẩm cao cấp. Hỏi số sản phẩm cao cấp còn lại?",
+      "options": [
+        "Tính số sản phẩm cao cấp còn lại → Tính số sản phẩm cao cấp đã bán → Tính tổng số sản phẩm cao cấp",
+        "Tính tổng số sản phẩm cao cấp → Tính số sản phẩm cao cấp đã bán → Tính số sản phẩm cao cấp còn lại",
+        "Tính số sản phẩm cao cấp đã bán → Tính tổng số sản phẩm cao cấp → Tính số sản phẩm cao cấp còn lại"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một nhà máy sản xuất 800 chai nước mỗi ngày. Trong đó, 25% là nước trái cây, còn lại là nước suối. Nhà máy tiêu thụ 50% số nước trái cây mỗi ngày. Hỏi số chai nước trái cây còn lại?",
+      "options": [
+        "Tính tổng số chai nước trái cây → Tính số chai nước trái cây đã tiêu thụ → Tính số chai nước trái cây còn lại",
+        "Tính số chai nước trái cây đã tiêu thụ → Tính tổng số chai nước trái cây → Tính số chai nước trái cây còn lại",
+        "Tính số chai nước suối → Tính số chai nước trái cây → Tính số chai nước trái cây còn lại"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một xưởng may có 600 chiếc áo, trong đó áo sơ mi chiếm 70%. Xưởng bán 20% số áo sơ mi. Hỏi số áo sơ mi còn lại?",
+      "options": [
+        "Tính tổng số áo sơ mi → Tính số áo sơ mi đã bán → Tính số áo sơ mi còn lại",
+        "Tính số áo sơ mi đã bán → Tính tổng số áo sơ mi → Tính số áo sơ mi còn lại",
+        "Tính số áo sơ mi còn lại → Tính số áo sơ mi đã bán → Tính tổng số áo sơ mi"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một kho hàng có 1000 tấn gạo, trong đó 35% là gạo cao cấp. Người ta xuất kho 40% số gạo cao cấp. Hỏi số gạo cao cấp còn lại?",
+      "options": [
+        "Tính tổng số gạo cao cấp → Tính số gạo cao cấp đã xuất kho → Tính số gạo cao cấp còn lại",
+        "Tính số gạo cao cấp đã xuất kho → Tính tổng số gạo cao cấp → Tính số gạo cao cấp còn lại",
+        "Tính số gạo cao cấp còn lại → Tính số gạo cao cấp đã xuất kho → Tính tổng số gạo cao cấp"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một bếp ăn mua về 120 kg thực phẩm, trong đó rau chiếm 75%. Người ta sử dụng 40% số rau để nấu canh. Hỏi số rau còn lại là bao nhiêu kg?",
+      "options": [
+        "Tính tổng số rau → Tính số rau đã dùng để nấu canh → Tính số rau còn lại",
+        "Tính số rau đã dùng để nấu canh → Tính tổng số rau → Tính số rau còn lại",
+        "Tính số rau còn lại → Tính số rau đã dùng để nấu canh → Tính tổng số rau"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một cửa hàng nhập về 90 kg trái cây, trong đó 30% là táo. Cửa hàng bán 50% số táo. Hỏi số táo còn lại?",
+      "options": [
+        "Tính tổng số táo → Tính số táo đã bán → Tính số táo còn lại",
+        "Tính số táo đã bán → Tính tổng số táo → Tính số táo còn lại",
+        "Tính số táo còn lại → Tính số táo đã bán → Tính tổng số táo"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một bếp ăn mua về 80 kg rau và thịt, trong đó khối lượng thịt chiếm 30%. Người ta dùng 1/4 khối lượng rau để nấu canh, còn lại làm món xào. Hỏi khối lượng rau để xào là bao nhiêu?",
+      "options": [
+        "Tìm khối lượng thịt bếp ăn đã mua → Tìm khối lượng rau bếp ăn đã mua → Tìm khối lượng rau đã dùng để nấu canh → Tìm khối lượng rau để xào",
+        "Tìm khối lượng rau bếp ăn đã mua → Tìm khối lượng thịt bếp ăn đã mua → Tìm khối lượng rau đã dùng để nấu canh → Tìm khối lượng rau để xào",
+        "Tìm khối lượng rau đã dùng để nấu canh → Tìm khối lượng rau để xào → Tìm khối lượng rau bếp ăn đã mua → Tìm khối lượng thịt bếp ăn đã mua"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một bếp ăn mua về 64 kg rau và thịt, trong đó khối lượng thịt chiếm 25%. Người ta dùng 1/3 khối lượng rau để nấu canh, còn lại làm món xào. Hỏi khối lượng rau để xào là bao nhiêu kg?",
+      "options": [
+        "Tính khối lượng thịt bếp ăn đã mua → Tính khối lượng rau bếp ăn đã mua → Tính khối lượng rau đã dùng để nấu canh → Tính khối lượng rau để xào",
+        "Tính khối lượng rau bếp ăn đã mua → Tính khối lượng thịt bếp ăn đã mua → Tính khối lượng rau đã dùng để nấu canh → Tính khối lượng rau để xào",
+        "Tính khối lượng rau đã dùng để nấu canh → Tính khối lượng rau để xào → Tính khối lượng rau bếp ăn đã mua → Tính khối lượng thịt bếp ăn đã mua"
+      ],
+      "answer": "a",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một cửa hàng nhập về 120 kg hàng hóa, trong đó 40% là hàng điện tử. Sau đó, cửa hàng bán được 1/2 số hàng điện tử. Hỏi số hàng điện tử còn lại là bao nhiêu kg?",
+      "options": [
+        "Tính số hàng điện tử còn lại → Tính số hàng điện tử đã bán → Tính tổng số hàng điện tử",
+        "Tính tổng số hàng điện tử → Tính số hàng điện tử đã bán → Tính số hàng điện tử còn lại",
+        "Tính số hàng điện tử đã bán → Tính tổng số hàng điện tử → Tính số hàng điện tử còn lại"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Một siêu thị mua về 200 kg trái cây, trong đó cam chiếm 35% tổng khối lượng. Sau đó, 1/4 số cam được dùng để ép nước. Hỏi khối lượng cam còn lại là bao nhiêu kg?",
+      "options": [
+        "Tính tổng số cam đã mua → Tính số cam dùng để ép nước → Tính số cam còn lại",
+        "Tính số cam dùng để ép nước → Tính tổng số cam đã mua → Tính số cam còn lại",
+        "Tính tổng số cam đã mua → Tính số cam còn lại → Tính số cam dùng để ép nước"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    },
+    {
+      "question": "Trong một lô hàng có 150 kg hạt, trong đó hạt đậu chiếm 20% tổng khối lượng. Sau đó, 1/3 số hạt đậu được sử dụng để sản xuất bột đậu. Hỏi khối lượng hạt đậu còn lại là bao nhiêu kg?",
+      "options": [
+        "Tính khối lượng hạt đậu trong lô hàng → Tính khối lượng hạt đậu dùng để sản xuất bột → Tính khối lượng hạt đậu còn lại",
+        "Tính khối lượng hạt đậu dùng để sản xuất bột → Tính khối lượng hạt đậu trong lô hàng → Tính khối lượng hạt đậu còn lại",
+        "Tính khối lượng hạt đậu trong lô hàng → Tính khối lượng hạt đậu còn lại → Tính khối lượng hạt đậu dùng để sản xuất bột"
+      ],
+      "answer": "b",
+      "img_src": "",
+      "type": "multiple_choice"
+    }
+  ]
+}
