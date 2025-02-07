@@ -39,10 +39,34 @@
     // Biến lưu giá trị lựa chọn trước đó của select, dùng để quay lại nếu người dùng hủy chuyển bài
     let previousValue = document.getElementById('exercise-select').value;
     
-    // Thêm sự kiện lắng nghe cho mọi input (text, radio) bên trong form quiz để đánh dấu form đã thay đổi
+    // Lắng nghe thay đổi trên form: bất kỳ input nào (text hoặc radio) sẽ đánh dấu form là đã thay đổi
     document.getElementById('quiz').addEventListener('input', function(e) {
         if (e.target.matches('input[type="text"], input[type="radio"]')) {
             isDirty = true;
+        }
+    });
+
+    // Bắt các sự kiện bàn phím để cảnh báo nếu form đang dirty:
+    window.addEventListener('keydown', function(e) {
+        // F5: keyCode === 116
+        // Enter: keyCode === 13, chỉ bắt nếu focus không ở INPUT hay TEXTAREA
+        if ((e.keyCode === 116) || (e.keyCode === 13 && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName))) {
+            if (isDirty) {
+                const confirmLeave = confirm("Bài tập đang được làm, bạn có muốn rời khỏi trang?");
+                if (!confirmLeave) {
+                    e.preventDefault();
+                    // Nếu là F5, chặn luôn hành động làm mới
+                    return false;
+                }
+            }
+        }
+    });
+
+    // Bắt sự kiện beforeunload để cảnh báo khi người dùng cố gắng tải lại hoặc rời khỏi trang
+    window.addEventListener('beforeunload', function(e) {
+        if (isDirty) {
+            e.preventDefault();
+            e.returnValue = '';  // Bắt buộc phải gán để trình duyệt hiển thị hộp thoại cảnh báo
         }
     });
 
