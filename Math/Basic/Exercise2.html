@@ -62,6 +62,8 @@
   let isDirty = false;
   // Biến lưu giá trị lựa chọn trước đó của select, dùng để quay lại nếu người dùng hủy chuyển bài
   let previousValue = $('#exercise-select').val();
+  // Biến cờ dùng để xác định xem sự kiện 'change' có được kích hoạt do revert hay không.
+  let suppressConfirm = false;
   
   // Lắng nghe thay đổi trên form: bất kỳ input nào (text hoặc radio) sẽ đánh dấu form là đã thay đổi
   document.getElementById('quiz').addEventListener('input', function(e) {
@@ -110,15 +112,24 @@
 
   // Bước 2: Khi người dùng chọn một file JSON, tải dữ liệu từ file đó
   $('#exercise-select').on('change', function(event) {
-      // Nếu form có dữ liệu đã thay đổi, hỏi người dùng xác nhận chuyển bài
-      if (event.originalEvent && isDirty) {
+      // Nếu sự kiện được kích hoạt do revert (programmatically) thì bỏ qua việc xác nhận
+      if (suppressConfirm) {
+          suppressConfirm = false;
+          return;
+      }
+	  
+      // Nếu form đang có thay đổi, hỏi người dùng xác nhận chuyển bài
+      if (isDirty) {
           const confirmChange = confirm("Bài tập đang được làm, bạn có muốn chọn bài mới?");
           if (!confirmChange) {
-              // Nếu người dùng không xác nhận, quay lại giá trị trước đó của select
+              // Nếu người dùng nhấn Cancel, đặt cờ để bỏ qua xác nhận ở lần trigger sau
+              suppressConfirm = true;
+              // Quay lại giá trị trước đó
               $('#exercise-select').val(previousValue).trigger('change');
               return;
           }
       }
+	  
       // Nếu người dùng xác nhận chuyển bài hoặc form chưa bị thay đổi:
       // Reset lại biến isDirty và cập nhật giá trị chọn hiện tại
       isDirty = false;
