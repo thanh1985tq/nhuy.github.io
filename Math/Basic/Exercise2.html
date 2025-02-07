@@ -114,7 +114,7 @@
       });
 
   // Bước 2: Khi người dùng chọn một file JSON, tải dữ liệu từ file đó
-  document.getElementById('exercise-select').addEventListener('change', function (event) {
+  $('#exercise-select').on('change', function(event) {
       // Nếu form có dữ liệu đã thay đổi, hỏi người dùng xác nhận chuyển bài
       if (isDirty) {
           const confirmChange = confirm("Bài tập đang được làm, bạn có muốn chọn bài mới?");
@@ -129,8 +129,8 @@
       isDirty = false;
       previousValue = event.target.value;
 
-	  console.log("Giá trị được chọn:", event.target.value);  // In ra console để kiểm tra giá trị
-      const selectedFile = event.target.value;
+	  console.log("Giá trị được chọn:", $(this).val());  // In ra console để kiểm tra giá trị
+      const selectedFile = $(this).val();
       if (selectedFile) {
           fetch(selectedFile)
               .then(response => response.json())
