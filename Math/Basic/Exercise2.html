@@ -61,7 +61,7 @@
   // Biến toàn cục để theo dõi trạng thái form đã thay đổi (dirty state)
   let isDirty = false;
   // Biến lưu giá trị lựa chọn trước đó của select, dùng để quay lại nếu người dùng hủy chuyển bài
-  let previousValue = document.getElementById('exercise-select').value;
+  let previousValue = $('#exercise-select').val();
   
   // Lắng nghe thay đổi trên form: bất kỳ input nào (text hoặc radio) sẽ đánh dấu form là đã thay đổi
   document.getElementById('quiz').addEventListener('input', function(e) {
