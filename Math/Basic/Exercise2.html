@@ -110,12 +110,8 @@
 
   // Bước 2: Khi người dùng chọn một file JSON, tải dữ liệu từ file đó
   $('#exercise-select').on('change', function(event) {
-      if (!event.originalEvent) {
-		  return;
-      }
-	  
       // Nếu form có dữ liệu đã thay đổi, hỏi người dùng xác nhận chuyển bài
-      if (isDirty) {
+      if (event.originalEvent && isDirty) {
           const confirmChange = confirm("Bài tập đang được làm, bạn có muốn chọn bài mới?");
           if (!confirmChange) {
               // Nếu người dùng không xác nhận, quay lại giá trị trước đó của select
