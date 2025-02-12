@@ -13,7 +13,7 @@
             "type": "multiple_choice"
         },
         {
-            "answer": "a",
+            "answer": "Town",
             "img_src": "",
             "options": [
                 "Town",
@@ -25,7 +25,7 @@
             "type": "multiple_choice"
         },
         {
-            "answer": "b",
+            "answer": "Countryside",
             "img_src": "",
             "options": [
                 "City",
@@ -37,7 +37,7 @@
             "type": "short_answer"
         },
         {
-            "answer": "b",
+            "answer": "Village",
             "img_src": "",
             "options": [
                 "Panda",
@@ -49,7 +49,7 @@
             "type": "short_answer"
         },
         {
-            "answer": "a",
+            "answer": "Dolphin",
             "img_src": "",
             "options": [
                 "Dolphin",
@@ -61,7 +61,7 @@
             "type": "multiple_choice"
         },
         {
-            "answer": "a",
+            "answer": "Panda",
             "img_src": "",
             "options": [
                 "Panda",
@@ -73,7 +73,7 @@
             "type": "short_answer"
         },
         {
-            "answer": "c",
+            "answer": "Animal",
             "img_src": "",
             "options": [
                 "Pink",
@@ -97,7 +97,7 @@
             "type": "multiple_choice"
         },
         {
-            "answer": "a",
+            "answer": "Animal",
             "img_src": "",
             "options": [
                 "Animal",
@@ -121,7 +121,7 @@
             "type": "multiple_choice"
         },
         {
-            "answer": "b",
+            "answer": "Table tennis",
             "img_src": "",
             "options": [
                 "Panda",
@@ -133,7 +133,7 @@
             "type": "short_answer"
         },
         {
-            "answer": "b",
+            "answer": "Sandwich",
             "img_src": "",
             "options": [
                 "Panda",
@@ -145,7 +145,7 @@
             "type": "short_answer"
         },
         {
-            "answer": "b",
+            "answer": "Sandwich",
             "img_src": "",
             "options": [
                 "Dolphin",
@@ -157,7 +157,7 @@
             "type": "short_answer"
         },
         {
-            "answer": "a",
+            "answer": "Introduce",
             "img_src": "",
             "options": [
                 "Introduce",
@@ -165,11 +165,11 @@
                 "Table tennis",
                 "Panda"
             ],
-            "question": "When you meet someone for the first time, you should ____ yourself.",
+            "question": "When you meet someone for the first time, you should ... yourself.",
             "type": "short_answer"
         },
         {
-            "answer": "a",
+            "answer": "Introduce",
             "img_src": "",
             "options": [
                 "Introduce",

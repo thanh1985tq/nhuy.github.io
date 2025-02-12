@@ -1,0 +1,118 @@
+{
+    "questions": [
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Building",
+                "Flat",
+                "House",
+                "Tower"
+            ],
+            "question": "Which of the following is a tall structure, usually with many floors?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Flat",
+                "Tower",
+                "District",
+                "Address"
+            ],
+            "question": "What do people usually live in when they rent an apartment?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Building",
+                "District",
+                "Address",
+                "Far from"
+            ],
+            "question": "What is the general term for structures like houses, flats, and towers?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Address",
+                "District",
+                "Flat",
+                "House"
+            ],
+            "question": "What word refers to the specific location of a building?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "District",
+                "Tower",
+                "Flat",
+                "Address"
+            ],
+            "question": "A ... is a part of a city or town that has its own name and administration.",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Far from",
+                "Near",
+                "Close",
+                "Inside"
+            ],
+            "question": "If something is a long distance away, we say it is ....",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Tower",
+            "img_src": "",
+            "question": "A tall structure with multiple floors is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Address",
+            "img_src": "",
+            "question": "The place where you live, including street and number, is your ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Flat",
+            "img_src": "",
+            "question": "A place where people live, often rented in a building, is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Building",
+            "img_src": "",
+            "question": "A structure that people build for living or working is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "House",
+            "img_src": "",
+            "question": "A separate living space, usually in a row of buildings, is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "District",
+            "img_src": "",
+            "question": "A large area in a city with its own name and administration is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Far from",
+            "img_src": "",
+            "question": "If a location is not close, we say it is ... from here.",
+            "type": "short_answer"
+        }
+    ]
+}

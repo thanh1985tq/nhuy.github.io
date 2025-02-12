@@ -1,0 +1,136 @@
+{
+    "questions": [
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "American",
+                "Australian",
+                "Japanese",
+                "Malaysian"
+            ],
+            "question": "Which nationality is associated with sushi and cherry blossoms?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "American",
+                "British",
+                "Indian",
+                "Chinese"
+            ],
+            "question": "If someone is from India, their nationality is...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Malaysian",
+                "Japanese",
+                "British",
+                "Chinese"
+            ],
+            "question": "A person from China is called a...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Clever",
+                "Helpful",
+                "Active",
+                "Appearance"
+            ],
+            "question": "What word describes a person who is always willing to assist others?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Friendly",
+                "Shy",
+                "Clever",
+                "Nationality"
+            ],
+            "question": "Which of the following best describes a person who enjoys socializing and easily meets new people?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Personality",
+                "Clever",
+                "Appearance",
+                "Invite"
+            ],
+            "question": "What is the word for how someone looks, including their height, hair, and face?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Invite",
+                "Make friends",
+                "Help",
+                "Active"
+            ],
+            "question": "If you ask someone to come to your birthday party, you... them.",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Friendly",
+                "Active",
+                "Clever",
+                "Helpful"
+            ],
+            "question": "A person who thinks quickly and finds smart solutions is...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Australian",
+            "img_src": "",
+            "question": "If a person is from Australia, their nationality is ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Personality",
+            "img_src": "",
+            "question": "A person’s behavior, attitude, and emotional traits define their ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Friendly",
+            "img_src": "",
+            "question": "Someone who easily gets along with others and enjoys being around people is ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "American",
+            "img_src": "",
+            "question": "A person from America is called ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Make friends",
+            "img_src": "",
+            "question": "If you introduce yourself to new people and build a good relationship, you ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Malaysian",
+            "img_src": "",
+            "question": "A person from Malaysia has the nationality ...",
+            "type": "short_answer"
+        }
+    ]
+}

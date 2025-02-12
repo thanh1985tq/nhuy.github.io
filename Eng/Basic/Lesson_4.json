@@ -1,0 +1,148 @@
+{
+    "questions": [
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Surf the Internet",
+                "Play the violin",
+                "Go for a walk",
+                "Water the flowers"
+            ],
+            "question": "What do you do if you enjoy playing music with a bow and strings?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Surf the Internet",
+                "Go for a walk",
+                "Water the flowers",
+                "Play the violin"
+            ],
+            "question": "If you like exploring websites and social media, you...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Play the violin",
+                "Go for a walk",
+                "Surf the Internet",
+                "Entertain"
+            ],
+            "question": "What activity helps you relax and enjoy fresh air outside?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Always play the violin",
+                "Rarely surf the Internet",
+                "Often water the flowers",
+                "Never entertain"
+            ],
+            "question": "If you take care of plants in the garden, you...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Cartoon",
+                "Newspaper",
+                "Magazine",
+                "Dictionary"
+            ],
+            "question": "What do children usually watch for fun?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Never do it",
+                "Rarely do it",
+                "Always do it",
+                "Sometimes do it"
+            ],
+            "question": "If you do something every day, you...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Entertain",
+                "Surf the Internet",
+                "Go for a walk",
+                "Water the flowers"
+            ],
+            "question": "Which word describes an activity that brings fun and joy?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Help somebody with something",
+                "Rarely entertain",
+                "Always play the violin",
+                "Never go for a walk"
+            ],
+            "question": "If you assist your friend with their homework, you...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Play the violin",
+            "img_src": "",
+            "question": "If you play a string instrument with a bow, you ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Surf the Internet",
+            "img_src": "",
+            "question": "When you use a browser to find information or check social media, you ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Go for a walk",
+            "img_src": "",
+            "question": "If you take a short journey on foot for relaxation, you ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Water the flowers",
+            "img_src": "",
+            "question": "When you give water to your plants, you ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Cartoon",
+            "img_src": "",
+            "question": "A type of animated TV show for children is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Usually",
+            "img_src": "",
+            "question": "If you do something regularly but not always, you ... do it.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Sometimes",
+            "img_src": "",
+            "question": "If you do something from time to time, you ... do it.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Rarely",
+            "img_src": "",
+            "question": "If you almost never do an activity, you ... do it.",
+            "type": "short_answer"
+        }
+    ]
+}
