@@ -1,0 +1,184 @@
+{
+    "questions": [
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Village",
+                "Town",
+                "City",
+                "Countryside"
+            ],
+            "question": "Where do most people live in tall buildings and busy streets?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Town",
+                "City",
+                "Countryside",
+                "Dolphin"
+            ],
+            "question": "Which place is usually smaller than a city but larger than a village?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "City",
+                "Countryside",
+                "Table tennis",
+                "Sandwich"
+            ],
+            "question": "The ... is a peaceful place with green fields and fresh air.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Panda",
+                "Village",
+                "Table tennis",
+                "Pink"
+            ],
+            "question": "A small group of houses in the countryside is called a ....",
+            "type": "short_answer"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Dolphin",
+                "City",
+                "Table tennis",
+                "Sandwich"
+            ],
+            "question": "Which of the following is an intelligent animal that lives in the ocean?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Panda",
+                "Dolphin",
+                "Village",
+                "Town"
+            ],
+            "question": "A ... is a black and white animal that loves eating bamboo.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Pink",
+                "Town",
+                "Animal",
+                "Sandwich"
+            ],
+            "question": "A dog, a cat, and a panda are all types of ....",
+            "type": "short_answer"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "A panda",
+                "A pink dress",
+                "A city",
+                "A village"
+            ],
+            "question": "Which of the following is pink?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Animal",
+                "City",
+                "Sandwich",
+                "Table tennis"
+            ],
+            "question": "A flamingo is an ... that has pink feathers.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "City",
+                "Table tennis",
+                "Village",
+                "Dolphin"
+            ],
+            "question": "Which sport is played on a table with a small ball and bat?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Panda",
+                "Table tennis",
+                "Pink",
+                "Countryside"
+            ],
+            "question": "... is a fast-paced sport that can be played indoors.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Panda",
+                "Sandwich",
+                "City",
+                "Table tennis"
+            ],
+            "question": "A ... usually has bread, vegetables, and meat.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Dolphin",
+                "Sandwich",
+                "Pink",
+                "Countryside"
+            ],
+            "question": "I had a delicious ... for lunch with ham and cheese.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Introduce",
+                "City",
+                "Table tennis",
+                "Panda"
+            ],
+            "question": "When you meet someone for the first time, you should ____ yourself.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Introduce",
+                "Pink",
+                "Dolphin",
+                "Sandwich"
+            ],
+            "question": "Let me ... my friend, Anna, to you.",
+            "type": "short_answer"
+        }
+    ]
+}
