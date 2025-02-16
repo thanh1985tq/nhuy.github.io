@@ -1,0 +1,39 @@
+'city', 'class', 'countryside', 'dolphin', 'pink', 'animal', 'sandwich', 'table tennis', 'panda', 'introduce', 'town', 'village'
+
+'building', 'flat', 'house', 'tower', 'address', 'district', 'far (+ from)'
+
+'American', 'Australian', 'Japanese', 'Malaysian', 'Indian', 'Chinese', 'British', 'nationality', 'friendly', 'helpful', 'clever', 'active', 'make friends', 'invite', 'appearance', 'personality'
+
+play the violin', 'surf the Internet', 'go for a walk', 'water the flowers', 'cartoon', 'always', 'usually', 'often', 'sometimes', 'rarely', 'never', 'entertain', 'help somebody with something'
+
+'firefighter', 'reporter', 'gardener', 'writer', 'teach children', 'report the news', 'grow flowers', 'write stories', 'interesting', 'dentist', 'survey', 'take care of'
+
+'music room', 'computer room', 'library', 'art room', 'ground floor', 'first floor', 'second floor', 'third floor', 'go upstairs', 'go downstairs', 'go along', 'go past', 'corridor', 'turn right', 'turn left'
+
+'do projects', 'play games', 'read books', 'solve maths problems', 'fun', 'good for', 'group work', 'interesting', 'useful', 'champion', 'close friends'
+
+'above', 'beside', 'under', 'in front of', 'bookcase', 'glue stick', 'crayon', 'set square', 'pencil sharpener', 'storybook', 'fairy tale'
+
+'theatre', 'aquarium', 'campsite', 'funfair', 'listen to music', 'watch the fish', 'dance around the campfire', 'play chess', 'jog', 'ride horses', 'wonderful'
+
+'hill', 'lake', 'theme park', 'pagoda', 'visit the old buildings', 'plant trees', 'play games', 'walk around the lake', 'famous', 'market', 'arrive', 'trip'
+
+'buy souvenirs', 'collect seashells', 'eat seafood', 'see some interesting places', 'take a boat trip around the bay', 'walk on the beach', 'sunbathe', 'journey', 'take a long time'
+
+'buy roses', 'buy roses', 'buy a branch of peach blossom', 'buy a branch of peach blossom', 'decorate the house', 'decorate the house', 'do the shopping', 'doing the shopping', 'make banh chung', 'making banh chung', 'make spring rolls', 'make spring rolls', 'fireworks show', 'fireworks show', 'flower festival', 'flower festival', 'New Year party', 'New Year party'
+
+'Children’s Day', 'Children’s Day', 'Teachers’ Day', 'Teachers’ Day', 'Sports Day', 'Sports Day', 'Mid-Autumn Festival', 'Mid-Autumn Festival', 'apple juice', 'apple juice', 'burger', 'burger', 'pizza', 'pizza', 'milk tea', 'milk tea', 'chips', 'chips', 'lemonade', 'lemonade'
+
+'do morning exercises', 'does morning exercises', 'play sports', 'play sports', 'drink fresh juice', 'drinks fresh juice', 'eat healthy food', 'Eating healthy food', 'do yoga', 'doing yoga', 'eat vegetables', 'eat vegetables', 'once', 'once', 'twice', 'twice', 'three times', 'three times', 'stay healthy', 'stay healthy', 'lifestyle', 'life style', 'do judo', 'done judo', 'active', 'active', 'set a great example for', 'sets a great example for'
+
+'toothache', 'toothache', 'headache', 'headache', 'sore throat', 'sore throat', 'stomachache', 'stomachache', 'tired', 'tired', 'go to the dentist', 'go to the dentist', 'have a rest', 'have a rest', 'drink warm water', 'drink warm water', 'take some medicine', 'take some medicine', 'regularly', 'regularly', 'school clinic', 'school clinic'
+
+'spring', 'Spring', 'summer', 'Summer', 'autumn', 'Autumn', 'winter', 'Winter', 'cold', 'cold', 'hot', 'hot', 'warm', 'warm', 'cool', 'cool', 'blouse', 'blouse', 'jeans', 'jeans', 'jumper', 'jumper', 'trousers', 'trousers', 'climate', 'climates', 'the north', 'the north', 'the south', 'the south', 'humid', 'humid'
+
+'Snow White, the seven dwarfs', 'Snow White, the seven dwarfs', 'The ant, the grasshopper', 'The ant, the grasshopper', 'The tortoise, the hare', 'The tortoise, the hare', 'The fox, the crow', 'The fox, the crow', 'main character', 'main character', 'race', 'race', 'Once upon a time', 'Once upon a time', 'forest', 'forest', 'trick', 'tricking', 'trust', 'trust'
+
+'means of transport', 'means of transport', 'Opera House', 'Opera House', 'bridge', 'bridge', 'square', 'Square', 'museum', 'museum', 'pagoda', 'Pagoda', 'water park', 'water park', 'lake', 'lake', 'hop-on hop-off bus', 'hop-on hop-off bus', 'explore', 'explore', 'ferry', 'ferry', 'sunset', 'sunset'
+
+'beautiful', 'beautiful', 'exciting', 'exciting', 'fantastic', 'fantastic', 'peaceful', 'peaceful', 'a variety of', 'a variety of', 'plan', 'plan', 'walking street', 'walking street', 'centre'
+
+'river', 'river', 'cave', 'cave', 'island', 'island', 'aquarium', 'aquarium', 'join a music club', 'joining a music club', 'go camping', 'go camping', 'visit an eco-farm', 'Visiting an eco-farm', 'practise swimming', 'practise swimming', 'grow vegetables', 'grows vegetables', 'waterfall', 'waterfall', 'take lessons', 'take lessons', 'foreign languages', 'foreign languages'

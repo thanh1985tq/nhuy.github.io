@@ -4,10 +4,10 @@
       "type": "multiple_choice",
       "question": "Where can you see different kinds of sea creatures?",
       "options": {
-        "a": "River",
-        "b": "Cave",
-        "c": "Island",
-        "d": "Aquarium"
+        "River",
+        "Cave",
+        "Island",
+        "Aquarium"
       },
       "answer": "d"
     },
@@ -15,10 +15,10 @@
       "type": "multiple_choice",
       "question": "What activity helps students improve their musical skills?",
       "options": {
-        "a": "Go camping",
-        "b": "Join a music club",
-        "c": "Visit an eco-farm",
-        "d": "Practise swimming"
+        "Go camping",
+        "Join a music club",
+        "Visit an eco-farm",
+        "Practise swimming"
       },
       "answer": "b"
     },
@@ -26,10 +26,10 @@
       "type": "multiple_choice",
       "question": "Which place is usually surrounded by water?",
       "options": {
-        "a": "Waterfall",
-        "b": "Cave",
-        "c": "Island",
-        "d": "River"
+        "Waterfall",
+        "Cave",
+        "Island",
+        "River"
       },
       "answer": "c"
     },
@@ -37,10 +37,10 @@
       "type": "multiple_choice",
       "question": "What do people usually do when they go camping?",
       "options": {
-        "a": "Take lessons",
-        "b": "Grow vegetables",
-        "c": "Sleep in a tent",
-        "d": "Practise swimming"
+        "Take lessons",
+        "Grow vegetables",
+        "Sleep in a tent",
+        "Practise swimming"
       },
       "answer": "c"
     },
@@ -48,10 +48,10 @@
       "type": "multiple_choice",
       "question": "What do people visit when they want to explore underground rock formations?",
       "options": {
-        "a": "Cave",
-        "b": "Waterfall",
-        "c": "Island",
-        "d": "Aquarium"
+        "Cave",
+        "Waterfall",
+        "Island",
+        "Aquarium"
       },
       "answer": "a"
     },

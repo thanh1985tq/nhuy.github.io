@@ -4,10 +4,10 @@
       "type": "multiple_choice",
       "question": "What is a common way to travel around a city and explore famous places?",
       "options": {
-        "a": "Opera House",
-        "b": "Ferry",
-        "c": "Sunset",
-        "d": "Pagoda"
+        "Opera House",
+        "Ferry",
+        "Sunset",
+        "Pagoda"
       },
       "answer": "b"
     },
@@ -15,10 +15,10 @@
       "type": "multiple_choice",
       "question": "Which place is known for performances and concerts?",
       "options": {
-        "a": "Bridge",
-        "b": "Opera House",
-        "c": "Square",
-        "d": "Water park"
+        "Bridge",
+        "Opera House",
+        "Square",
+        "Water park"
       },
       "answer": "b"
     },
@@ -26,10 +26,10 @@
       "type": "multiple_choice",
       "question": "What is a public place where people can see historical artifacts?",
       "options": {
-        "a": "Museum",
-        "b": "Pagoda",
-        "c": "Ferry",
-        "d": "Bridge"
+        "Museum",
+        "Pagoda",
+        "Ferry",
+        "Bridge"
       },
       "answer": "a"
     },
@@ -37,10 +37,10 @@
       "type": "multiple_choice",
       "question": "Where do people go to pray in a Buddhist culture?",
       "options": {
-        "a": "Water park",
-        "b": "Opera House",
-        "c": "Pagoda",
-        "d": "Sunset"
+        "Water park",
+        "Opera House",
+        "Pagoda",
+        "Sunset"
       },
       "answer": "c"
     },
@@ -48,10 +48,10 @@
       "type": "multiple_choice",
       "question": "What can you use to travel across a river without a car?",
       "options": {
-        "a": "Bridge",
-        "b": "Hop-on hop-off bus",
-        "c": "Ferry",
-        "d": "Square"
+        "Bridge",
+        "Hop-on hop-off bus",
+        "Ferry",
+        "Square"
       },
       "answer": "c"
     },

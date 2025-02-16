@@ -4,10 +4,10 @@
       "type": "multiple_choice",
       "question": "What word describes a place that is calm and quiet?",
       "options": {
-        "a": "Exciting",
-        "b": "Beautiful",
-        "c": "Peaceful",
-        "d": "Fantastic"
+        "Exciting",
+        "Beautiful",
+        "Peaceful",
+        "Fantastic"
       },
       "answer": "c"
     },
@@ -15,10 +15,10 @@
       "type": "multiple_choice",
       "question": "A city with many different kinds of restaurants offers ... food choices.",
       "options": {
-        "a": "A variety of",
-        "b": "Walking street",
-        "c": "Centre",
-        "d": "Plan"
+        "A variety of",
+        "Walking street",
+        "Centre",
+        "Plan"
       },
       "answer": "a"
     },
@@ -26,10 +26,10 @@
       "type": "multiple_choice",
       "question": "If a place is very interesting and full of energy, we can describe it as ...",
       "options": {
-        "a": "Beautiful",
-        "b": "Exciting",
-        "c": "Peaceful",
-        "d": "Centre"
+        "Beautiful",
+        "Exciting",
+        "Peaceful",
+        "Centre"
       },
       "answer": "b"
     },
@@ -37,10 +37,10 @@
       "type": "multiple_choice",
       "question": "Before traveling to a new city, you should always make a ...",
       "options": {
-        "a": "Walking street",
-        "b": "Plan",
-        "c": "Centre",
-        "d": "Fantastic"
+        "Walking street",
+        "Plan",
+        "Centre",
+        "Fantastic"
       },
       "answer": "b"
     },
@@ -48,10 +48,10 @@
       "type": "multiple_choice",
       "question": "Which of the following best describes a very special and wonderful experience?",
       "options": {
-        "a": "Beautiful",
-        "b": "Fantastic",
-        "c": "Peaceful",
-        "d": "Centre"
+        "Beautiful",
+        "Fantastic",
+        "Peaceful",
+        "Centre"
       },
       "answer": "b"
     },
