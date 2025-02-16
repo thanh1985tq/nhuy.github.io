@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Do morning exercises",
+                "Play sports",
+                "Drink fresh juice",
+                "Do yoga"
+            ],
+            "question": "Which activity helps you wake up and feel energized in the morning?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Eat healthy food",
+                "Doing yoga",
+                "Drinks fresh juice",
+                "Play sports"
+            ],
+            "question": "Which habit involves consuming fresh and nutritious beverages?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Eat vegetables",
+                "Do judo",
+                "Stay healthy",
+                "Life style"
+            ],
+            "question": "Which action is important for maintaining a balanced diet?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Once",
+                "Twice",
+                "Three times",
+                "Set a great example for"
+            ],
+            "question": "How often should you exercise in a week to stay fit?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Stay healthy",
+            "img_src": "",
+            "question": "To have a good lifestyle, you should ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Do yoga",
+            "img_src": "",
+            "question": "People who want to improve flexibility and relaxation should ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Play sports",
+            "img_src": "",
+            "question": "To remain active and strong, children should ... regularly.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Eat vegetables",
+            "img_src": "",
+            "question": "A good way to get vitamins and minerals is to ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Set a great example for",
+            "img_src": "",
+            "question": "Parents should ... their children by maintaining a healthy lifestyle.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Twice",
+            "img_src": "",
+            "question": "If you exercise two times a week, you do it ... a week.",
+            "type": "short_answer"
+        }
+    ]
+}

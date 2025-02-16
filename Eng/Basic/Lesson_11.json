@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Buy souvenirs",
+                "Collect seashells",
+                "Eat seafood",
+                "Sunbathe"
+            ],
+            "question": "What do tourists often do to bring back memories from their trip?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Walk on the beach",
+                "Collect seashells",
+                "Take a long time",
+                "See some interesting places"
+            ],
+            "question": "What activity involves picking up small objects from the shore?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Take a boat trip around the bay",
+                "Eat seafood",
+                "See some interesting places",
+                "Journey"
+            ],
+            "question": "When visiting a new city, people often explore and ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Sunbathe",
+                "Take a long time",
+                "Walk on the beach",
+                "Take a boat trip around the bay"
+            ],
+            "question": "Which activity involves lying in the sun to get a tan?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Journey",
+            "img_src": "",
+            "question": "A long trip from one place to another is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Take a long time",
+            "img_src": "",
+            "question": "If something is not quick, it will ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Eat seafood",
+            "img_src": "",
+            "question": "When visiting coastal cities, people love to ... at local restaurants.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Take a boat trip around the bay",
+            "img_src": "",
+            "question": "Tourists often ... to enjoy the beautiful scenery of the water.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Walk on the beach",
+            "img_src": "",
+            "question": "In the evening, many couples enjoy a ... under the sunset.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "See some interesting places",
+            "img_src": "",
+            "question": "During our trip, we planned to ... such as museums and temples.",
+            "type": "short_answer"
+        }
+    ]
+}

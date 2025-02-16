@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Children’s Day",
+                "Teachers’ Day",
+                "Sports Day",
+                "Mid-Autumn Festival"
+            ],
+            "question": "Which day is celebrated to honor educators and their contributions?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Apple juice",
+                "Burger",
+                "Milk tea",
+                "Pizza"
+            ],
+            "question": "Which drink is made with tea, milk, and tapioca pearls?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Mid-Autumn Festival",
+                "Teachers’ Day",
+                "Children’s Day",
+                "Sports Day"
+            ],
+            "question": "Which festival is celebrated with lanterns and mooncakes?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Lemonade",
+                "Chips",
+                "Apple juice",
+                "Burger"
+            ],
+            "question": "Which food consists of a bun, patty, and various toppings?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Children’s Day",
+            "img_src": "",
+            "question": "A special day dedicated to celebrating young people is called ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Sports Day",
+            "img_src": "",
+            "question": "On ..., students participate in different athletic activities and competitions.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Pizza",
+            "img_src": "",
+            "question": "A popular Italian dish made with dough, cheese, and toppings is called ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Apple juice",
+            "img_src": "",
+            "question": "A drink made from pressed apples is called ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Lemonade",
+            "img_src": "",
+            "question": "A refreshing drink made from lemons, sugar, and water is called ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Chips",
+            "img_src": "",
+            "question": "A crunchy snack often made from potatoes is called ...",
+            "type": "short_answer"
+        }
+    ]
+}

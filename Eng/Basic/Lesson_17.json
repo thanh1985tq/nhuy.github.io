@@ -1,0 +1,95 @@
+{
+    "questions": [
+        {
+            "question": "Who are the main characters in the fairy tale where a princess befriends seven small men?",
+            "options": [
+                "The ant, the grasshopper",
+                "Snow White, the seven dwarfs",
+                "The fox, the crow",
+                "The tortoise, the hare"
+            ],
+            "answer": "b",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "Which fable teaches a lesson about hard work and laziness?",
+            "options": [
+                "The ant, the grasshopper",
+                "The tortoise, the hare",
+                "Snow White, the seven dwarfs",
+                "The fox, the crow"
+            ],
+            "answer": "a",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "In the story \"The tortoise and the hare,\" what kind of event do they participate in?",
+            "options": [
+                "A singing competition",
+                "A race",
+                "A trick game",
+                "A trust-building exercise"
+            ],
+            "answer": "b",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "What phrase typically starts a fairy tale?",
+            "options": [
+                "Once upon a time",
+                "A long time ago",
+                "In a distant land",
+                "There was a kingdom"
+            ],
+            "answer": "a",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "Where do many fairy tales take place?",
+            "options": [
+                "City",
+                "Desert",
+                "Forest",
+                "Ocean"
+            ],
+            "answer": "c",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "In the story \"The fox and the crow,\" what does the fox do to get the cheese?",
+            "options": [
+                "Trick the crow",
+                "Race the crow",
+                "Trust the crow",
+                "Give a gift to the crow"
+            ],
+            "answer": "a",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "Complete the sentence: The main character of a fairy tale is known as the ...",
+            "answer": "main character",
+            "type": "short_answer"
+        },
+        {
+            "question": "Complete the sentence: In the fable about the tortoise and the hare, they compete in a ...",
+            "answer": "race",
+            "type": "short_answer"
+        },
+        {
+            "question": "Complete the sentence: The phrase \"Once ...\" is commonly used to begin a fairy tale.",
+            "answer": "Once upon a time",
+            "type": "short_answer"
+        },
+        {
+            "question": "Complete the sentence: The fox won by ... the crow into dropping its food.",
+            "answer": "tricking",
+            "type": "short_answer"
+        },
+        {
+            "question": "Complete the sentence: A lesson from many fables is to ... those who may deceive you.",
+            "answer": "trust",
+            "type": "short_answer"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Play games",
+                "Read books",
+                "Solve maths problems",
+                "Do projects"
+            ],
+            "question": "If you enjoy learning new stories and increasing knowledge, you should...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Do projects",
+                "Solve maths problems",
+                "Read books",
+                "Play games"
+            ],
+            "question": "Working on assignments together in a team is called...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Good for",
+                "Fun",
+                "Useful",
+                "Interesting"
+            ],
+            "question": "Studying hard and practicing skills are very ... for your future.",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Do projects",
+                "Play games",
+                "Solve maths problems",
+                "Group work"
+            ],
+            "question": "When students work together to complete a task, they are doing ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Champion",
+            "img_src": "",
+            "question": "The person who wins a competition is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Close friends",
+            "img_src": "",
+            "question": "People who share a strong bond and trust each other a lot are called ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Fun",
+            "img_src": "",
+            "question": "Playing games is a great way to have ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Solve maths problems",
+            "img_src": "",
+            "question": "If you enjoy working with numbers, you like to ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Play games",
+            "img_src": "",
+            "question": "Many students love to ... during their free time because it is entertaining.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Do projects",
+            "img_src": "",
+            "question": "At school, students often work together to ... for different subjects.",
+            "type": "short_answer"
+        }
+    ]
+}

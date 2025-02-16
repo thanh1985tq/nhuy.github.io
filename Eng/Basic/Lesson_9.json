@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Theatre",
+                "Funfair",
+                "Aquarium",
+                "Campsite"
+            ],
+            "question": "Where can you go to watch the fish swim?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Campsite",
+                "Aquarium",
+                "Theatre",
+                "Funfair"
+            ],
+            "question": "Where do people dance around the campfire?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Ride horses",
+                "Listen to music",
+                "Jog",
+                "Play chess"
+            ],
+            "question": "If you want to relax and enjoy sounds, you should ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Watch the fish",
+                "Jog",
+                "Dance around the campfire",
+                "Ride horses"
+            ],
+            "question": "Which activity involves sitting on an animal and moving around?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Funfair",
+            "img_src": "",
+            "question": "People go to a ... to enjoy exciting rides and games.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Theatre",
+            "img_src": "",
+            "question": "If you want to watch a live play, you should visit a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Jog",
+            "img_src": "",
+            "question": "To stay fit, many people wake up early to ... in the park.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Play chess",
+            "img_src": "",
+            "question": "A strategic game that requires thinking skills is called ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Watch the fish",
+            "img_src": "",
+            "question": "At the aquarium, visitors can ... swimming in the tanks.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Wonderful",
+            "img_src": "",
+            "question": "Going to the funfair and riding the roller coasters is a ... experience!",
+            "type": "short_answer"
+        }
+    ]
+}

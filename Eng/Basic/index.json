@@ -15,6 +15,70 @@
         {
             "name": "Unit 4. Our free-time activities",
             "path": "Lesson_4.json"
+        },
+        {
+            "name": "Unit 5. My future job",
+            "path": "Lesson_5.json"
+        },
+        {
+            "name": "Unit 6. Our school rooms",
+            "path": "Lesson_6.json"
+        },
+        {
+            "name": "Unit 7. Our favourite school activities",
+            "path": "Lesson_7.json"
+        },
+        {
+            "name": "Unit 8. In our classroom",
+            "path": "Lesson_8.json"
+        },
+        {
+            "name": "Unit 9. Our outdoor activities",
+            "path": "Lesson_9.json"
+        },
+        {
+            "name": "Unit 10. Our school trip",
+            "path": "Lesson_10.json"
+        },
+        {
+            "name": "Unit 11. Family time",
+            "path": "Lesson_11.json"
+        },
+        {
+            "name": "Unit 12. Our Tet holiday",
+            "path": "Lesson_12.json"
+        },
+        {
+            "name": "Unit 13. Our special days",
+            "path": "Lesson_13.json"
+        },
+        {
+            "name": "Unit 14. Staying healthy",
+            "path": "Lesson_14.json"
+        },
+        {
+            "name": "Unit 15. Our health",
+            "path": "Lesson_15.json"
+        },
+        {
+            "name": "Unit 16. Seasons and the weather",
+            "path": "Lesson_16.json"
+        },
+        {
+            "name": "Unit 17. Stories for children",
+            "path": "Lesson_17.json"
+        },
+        {
+            "name": "Unit 18. Means of transport",
+            "path": "Lesson_18.json"
+        },
+        {
+            "name": "Unit 19. Places of interest",
+            "path": "Lesson_19.json"
+        },
+        {
+            "name": "Unit 20. Our summer holiday",
+            "path": "Lesson_20.json"
         }
     ]
 }

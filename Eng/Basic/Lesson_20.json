@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Where can you see different kinds of sea creatures?",
+      "options": {
+        "a": "River",
+        "b": "Cave",
+        "c": "Island",
+        "d": "Aquarium"
+      },
+      "answer": "d"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What activity helps students improve their musical skills?",
+      "options": {
+        "a": "Go camping",
+        "b": "Join a music club",
+        "c": "Visit an eco-farm",
+        "d": "Practise swimming"
+      },
+      "answer": "b"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which place is usually surrounded by water?",
+      "options": {
+        "a": "Waterfall",
+        "b": "Cave",
+        "c": "Island",
+        "d": "River"
+      },
+      "answer": "c"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What do people usually do when they go camping?",
+      "options": {
+        "a": "Take lessons",
+        "b": "Grow vegetables",
+        "c": "Sleep in a tent",
+        "d": "Practise swimming"
+      },
+      "answer": "c"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What do people visit when they want to explore underground rock formations?",
+      "options": {
+        "a": "Cave",
+        "b": "Waterfall",
+        "c": "Island",
+        "d": "Aquarium"
+      },
+      "answer": "a"
+    },
+    {
+      "type": "short_answer",
+      "question": "People love to travel to the ... to enjoy the fresh air and see beautiful waterfalls.",
+      "answer": "river"
+    },
+    {
+      "type": "short_answer",
+      "question": "My family will ... this weekend to enjoy nature.",
+      "answer": "go camping"
+    },
+    {
+      "type": "short_answer",
+      "question": "She spends her free time ... because she wants to improve her skills.",
+      "answer": "practising swimming"
+    },
+    {
+      "type": "short_answer",
+      "question": "We plan to ... this summer because we want to learn how to grow vegetables.",
+      "answer": "visit an eco-farm"
+    },
+    {
+      "type": "short_answer",
+      "question": "Many students ... to improve their speaking and writing skills.",
+      "answer": "take lessons in foreign languages"
+    }
+  ]
+}

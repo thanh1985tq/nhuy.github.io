@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Under the table",
+                "Beside the chair",
+                "Above the bookcase",
+                "In front of the window"
+            ],
+            "question": "Where is the lamp located?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Pencil sharpener",
+                "Glue stick",
+                "Set square",
+                "Crayon"
+            ],
+            "question": "Which tool is used to draw perfect right angles?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Fairy tale",
+                "Storybook",
+                "Bookcase",
+                "Pencil sharpener"
+            ],
+            "question": "A magical story often featuring princes and dragons is called a ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "In front of the school",
+                "Beside the bookcase",
+                "Under the table",
+                "Above the shelf"
+            ],
+            "question": "If something is at a higher position than another object, it is ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Bookcase",
+            "img_src": "",
+            "question": "A piece of furniture used for storing books is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Glue stick",
+            "img_src": "",
+            "question": "You use a ... to stick papers together.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Crayon",
+            "img_src": "",
+            "question": "Children use a ... to color their drawings.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Set square",
+            "img_src": "",
+            "question": "A ... is useful for drawing triangles and measuring angles.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Pencil sharpener",
+            "img_src": "",
+            "question": "If your pencil tip is broken, you should use a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Storybook",
+            "img_src": "",
+            "question": "Children enjoy reading a ... before bedtime.",
+            "type": "short_answer"
+        }
+    ]
+}

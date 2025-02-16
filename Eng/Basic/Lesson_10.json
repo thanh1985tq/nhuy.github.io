@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Hill",
+                "Lake",
+                "Market",
+                "Theme park"
+            ],
+            "question": "Which place is an elevated landform, often covered with grass and trees?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Pagoda",
+                "Market",
+                "Trip",
+                "Theme park"
+            ],
+            "question": "Where can people go to enjoy exciting rides and attractions?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Arrive",
+                "Visit the old buildings",
+                "Plant trees",
+                "Walk around the lake"
+            ],
+            "question": "What activity involves exploring historical structures?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Famous",
+                "Trip",
+                "Market",
+                "Lake"
+            ],
+            "question": "Where do people usually go to buy fresh food and goods?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Trip",
+            "img_src": "",
+            "question": "A journey to visit a new place is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Famous",
+            "img_src": "",
+            "question": "The Eiffel Tower is a ... landmark in France.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Arrive",
+            "img_src": "",
+            "question": "When you reach your destination, you ... there.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Walk around the lake",
+            "img_src": "",
+            "question": "In the morning, many people ... for exercise and relaxation.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Plant trees",
+            "img_src": "",
+            "question": "To help the environment, people often ... in parks and gardens.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Play games",
+            "img_src": "",
+            "question": "At the theme park, children love to ... with their friends.",
+            "type": "short_answer"
+        }
+    ]
+}

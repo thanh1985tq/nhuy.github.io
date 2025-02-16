@@ -1,0 +1,88 @@
+{
+    "questions": [
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Buy roses",
+                "Buy a branch of peach blossom",
+                "Make banh chung",
+                "Fireworks show"
+            ],
+            "question": "What do people often buy to decorate their home during the New Year?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Decorate the house",
+                "Do the shopping",
+                "Make spring rolls",
+                "Flower festival"
+            ],
+            "question": "Before New Year, people often clean and ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Making banh chung",
+                "Fireworks show",
+                "New Year party",
+                "Buy roses"
+            ],
+            "question": "A traditional activity where people cook a special square cake is called ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Flower festival",
+                "Do the shopping",
+                "Buy a branch of peach blossom",
+                "Making banh chung"
+            ],
+            "question": "During New Year, many people visit a ... to enjoy beautiful decorations and flowers.",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Fireworks show",
+            "img_src": "",
+            "question": "At midnight on New Year's Eve, people enjoy watching the ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "New Year party",
+            "img_src": "",
+            "question": "Families and friends gather together to celebrate at a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Buy a branch of peach blossom",
+            "img_src": "",
+            "question": "To bring luck and happiness, many people ... before the New Year.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Make spring rolls",
+            "img_src": "",
+            "question": "One of the traditional dishes that families prepare is ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Do the shopping",
+            "img_src": "",
+            "question": "Before the holiday, people usually go to the market to ... for New Year essentials.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Decorate the house",
+            "img_src": "",
+            "question": "To welcome the New Year, families often clean and ... with flowers and ornaments.",
+            "type": "short_answer"
+        }
+    ]
+}

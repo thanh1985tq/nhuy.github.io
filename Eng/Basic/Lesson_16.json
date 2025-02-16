@@ -1,0 +1,74 @@
+{
+    "questions": [
+        {
+            "question": "Which season is usually the coldest?",
+            "options": [
+                "Spring",
+                "Summer",
+                "Autumn",
+                "Winter"
+            ],
+            "answer": "d",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "The weather in the north during winter is very ...",
+            "answer": "cold",
+            "type": "short_answer"
+        },
+        {
+            "question": "Which season is known for being hot?",
+            "options": [
+                "Spring",
+                "Summer",
+                "Autumn",
+                "Winter"
+            ],
+            "answer": "b",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "In humid weather, people often wear light clothes like a ...",
+            "options": [
+                "jumper",
+                "jeans",
+                "blouse",
+                "trousers"
+            ],
+            "answer": "c",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "The climate in the south is usually ... and humid.",
+            "answer": "hot",
+            "type": "short_answer"
+        },
+        {
+            "question": "Which piece of clothing is suitable for cold weather?",
+            "options": [
+                "Blouse",
+                "Jumper",
+                "Jeans",
+                "Trousers"
+            ],
+            "answer": "b",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "The weather in autumn is usually ...",
+            "answer": "cool",
+            "type": "short_answer"
+        },
+        {
+            "question": "Which word describes the overall weather conditions of a region?",
+            "options": [
+                "Clothes",
+                "Seasons",
+                "Climate",
+                "Temperature"
+            ],
+            "answer": "c",
+            "type": "multiple_choice"
+        }
+    ]
+}

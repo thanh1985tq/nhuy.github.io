@@ -1,0 +1,160 @@
+{
+    "questions": [
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Music room",
+                "Art room",
+                "Library",
+                "Computer room"
+            ],
+            "question": "Where can students borrow books at school?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Music room",
+                "Art room",
+                "Library",
+                "Computer room"
+            ],
+            "question": "If you want to draw and paint, you should go to the...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Music room",
+                "Computer room",
+                "Library",
+                "Corridor"
+            ],
+            "question": "Which room is used for learning and practicing musical instruments?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Art room",
+                "Library",
+                "Computer room",
+                "Ground floor"
+            ],
+            "question": "Where do students learn how to use technology and work on digital assignments?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Go downstairs",
+                "Go past the corridor",
+                "Go upstairs",
+                "Turn right"
+            ],
+            "question": "What should you do if your classroom is on a higher floor?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Turn left",
+                "Go upstairs",
+                "Turn right",
+                "Go downstairs"
+            ],
+            "question": "If you are on the third floor and need to go to the first floor, you should...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Go past the corridor",
+                "Turn left",
+                "Go downstairs",
+                "Turn right"
+            ],
+            "question": "If you are at the entrance and your classroom is at the end of the hallway, you need to...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Turn left",
+                "Go along the corridor",
+                "Turn right",
+                "Go downstairs"
+            ],
+            "question": "If your teacher tells you to move to the right side of the hallway, you should...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Music room",
+            "img_src": "",
+            "question": "The place where students learn and play musical instruments is called the ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Library",
+            "img_src": "",
+            "question": "If you want to read books and study quietly, you should go to the ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Art room",
+            "img_src": "",
+            "question": "The place where students learn to draw, paint, and be creative is called the ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Computer room",
+            "img_src": "",
+            "question": "If you need to use a computer at school, you should go to the ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Ground floor",
+            "img_src": "",
+            "question": "The lowest level of a building is called the ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "First floor",
+            "img_src": "",
+            "question": "If your classroom is one level above the ground floor, it is on the ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Go upstairs",
+            "img_src": "",
+            "question": "If you need to move from the first floor to the third floor, you should ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Go past the corridor",
+            "img_src": "",
+            "question": "If your classroom is located after the corridor, you should ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Turn right",
+            "img_src": "",
+            "question": "When moving to the right side of a hallway, you need to ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Turn left",
+            "img_src": "",
+            "question": "When moving to the left side of a hallway, you need to ...",
+            "type": "short_answer"
+        }
+    ]
+}

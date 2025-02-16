@@ -1,0 +1,63 @@
+{
+    "questions": [
+        {
+            "question": "What should you do if you have a toothache?",
+            "options": [
+                "Go to the school clinic",
+                "Drink warm water",
+                "Go to the dentist",
+                "Take some medicine"
+            ],
+            "answer": "c",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "If you feel tired, you should ...",
+            "answer": "have a rest",
+            "type": "short_answer"
+        },
+        {
+            "question": "Which of the following can help soothe a sore throat?",
+            "options": [
+                "Take some medicine",
+                "Drink warm water",
+                "Go to the dentist",
+                "Go to the school clinic"
+            ],
+            "answer": "b",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "When you have a headache, it is good to ...",
+            "answer": "have a rest",
+            "type": "short_answer"
+        },
+        {
+            "question": "Where should a student go if they feel unwell at school?",
+            "options": [
+                "Home",
+                "School clinic",
+                "Dentist",
+                "Library"
+            ],
+            "answer": "b",
+            "type": "multiple_choice"
+        },
+        {
+            "question": "To stay healthy, you should brush your teeth ...",
+            "answer": "regularly",
+            "type": "short_answer"
+        },
+        {
+            "question": "If you have a stomachache, you should ...",
+            "options": [
+                "Eat more food",
+                "Take some medicine",
+                "Drink cold water",
+                "Go for a run"
+            ],
+            "answer": "b",
+            "type": "multiple_choice"
+        }
+    ]
+}

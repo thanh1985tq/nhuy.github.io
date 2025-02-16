@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "What word describes a place that is calm and quiet?",
+      "options": {
+        "a": "Exciting",
+        "b": "Beautiful",
+        "c": "Peaceful",
+        "d": "Fantastic"
+      },
+      "answer": "c"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A city with many different kinds of restaurants offers ... food choices.",
+      "options": {
+        "a": "A variety of",
+        "b": "Walking street",
+        "c": "Centre",
+        "d": "Plan"
+      },
+      "answer": "a"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "If a place is very interesting and full of energy, we can describe it as ...",
+      "options": {
+        "a": "Beautiful",
+        "b": "Exciting",
+        "c": "Peaceful",
+        "d": "Centre"
+      },
+      "answer": "b"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Before traveling to a new city, you should always make a ...",
+      "options": {
+        "a": "Walking street",
+        "b": "Plan",
+        "c": "Centre",
+        "d": "Fantastic"
+      },
+      "answer": "b"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which of the following best describes a very special and wonderful experience?",
+      "options": {
+        "a": "Beautiful",
+        "b": "Fantastic",
+        "c": "Peaceful",
+        "d": "Centre"
+      },
+      "answer": "b"
+    },
+    {
+      "type": "short_answer",
+      "question": "This town is very ... with colorful flowers and clear blue skies.",
+      "answer": "beautiful"
+    },
+    {
+      "type": "short_answer",
+      "question": "There are ... activities for tourists to enjoy, from shopping to sightseeing.",
+      "answer": "a variety of"
+    },
+    {
+      "type": "short_answer",
+      "question": "Hoan Kiem Lake is located in the ... of Hanoi.",
+      "answer": "centre"
+    },
+    {
+      "type": "short_answer",
+      "question": "The old town is famous for its ... where people can walk without worrying about cars.",
+      "answer": "walking street"
+    },
+    {
+      "type": "short_answer",
+      "question": "Before the trip, we need to ... everything carefully.",
+      "answer": "plan"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+    "questions": [
+        {
+            "answer": "c",
+            "img_src": "",
+            "options": [
+                "Reporter",
+                "Gardener",
+                "Firefighter",
+                "Dentist"
+            ],
+            "question": "Who helps put out fires and rescue people from danger?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Teach children",
+                "Report the news",
+                "Grow flowers",
+                "Take care of patients"
+            ],
+            "question": "What does a reporter do?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "img_src": "",
+            "options": [
+                "Firefighter",
+                "Gardener",
+                "Writer",
+                "Reporter"
+            ],
+            "question": "Which job involves taking care of plants and flowers?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Writer",
+                "Firefighter",
+                "Gardener",
+                "Dentist"
+            ],
+            "question": "If someone enjoys creating books and novels, they are a...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "d",
+            "img_src": "",
+            "options": [
+                "Dentist",
+                "Reporter",
+                "Firefighter",
+                "Someone who teaches children"
+            ],
+            "question": "Who works at a school and helps students learn new things?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Dentist",
+                "Writer",
+                "Firefighter",
+                "Reporter"
+            ],
+            "question": "A person who works in a clinic and takes care of people's teeth is a...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Interesting",
+                "Boring",
+                "Difficult",
+                "Useless"
+            ],
+            "question": "Which word best describes a job that is exciting and full of new experiences?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "img_src": "",
+            "options": [
+                "Survey",
+                "Writer",
+                "Gardener",
+                "Dentist"
+            ],
+            "question": "Who collects and analyzes information from people through questionnaires?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "Firefighter",
+            "img_src": "",
+            "question": "A person who helps put out fires is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Report the news",
+            "img_src": "",
+            "question": "If someone works in journalism and shares information on TV or in newspapers, they ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Gardener",
+            "img_src": "",
+            "question": "A person who plants and takes care of flowers is called a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Write stories",
+            "img_src": "",
+            "question": "If you love creating books, poems, or novels, you ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Teach children",
+            "img_src": "",
+            "question": "A teacher’s job is to ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Interesting",
+            "img_src": "",
+            "question": "If something is exciting and makes you curious, it is ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Dentist",
+            "img_src": "",
+            "question": "A person who takes care of teeth and gums is a ...",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Survey",
+            "img_src": "",
+            "question": "If someone asks many people questions to gather information, they are conducting a ...",
+            "type": "short_answer"
+        }
+    ]
+}
