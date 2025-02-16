@@ -1,84 +1,84 @@
 {
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "question": "What is a common way to travel around a city and explore famous places?",
-      "options": {
-        "Opera House",
-        "Ferry",
-        "Sunset",
-        "Pagoda"
-      },
-      "answer": "b"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Which place is known for performances and concerts?",
-      "options": {
-        "Bridge",
-        "Opera House",
-        "Square",
-        "Water park"
-      },
-      "answer": "b"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "What is a public place where people can see historical artifacts?",
-      "options": {
-        "Museum",
-        "Pagoda",
-        "Ferry",
-        "Bridge"
-      },
-      "answer": "a"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Where do people go to pray in a Buddhist culture?",
-      "options": {
-        "Water park",
-        "Opera House",
-        "Pagoda",
-        "Sunset"
-      },
-      "answer": "c"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "What can you use to travel across a river without a car?",
-      "options": {
-        "Bridge",
-        "Hop-on hop-off bus",
-        "Ferry",
-        "Square"
-      },
-      "answer": "c"
-    },
-    {
-      "type": "short_answer",
-      "question": "A ... is a structure built over a river or road that allows people and vehicles to cross.",
-      "answer": "bridge"
-    },
-    {
-      "type": "short_answer",
-      "question": "People can visit a ... to learn about history and art.",
-      "answer": "museum"
-    },
-    {
-      "type": "short_answer",
-      "question": "The Sydney ... is one of the most famous landmarks in Australia.",
-      "answer": "Opera House"
-    },
-    {
-      "type": "short_answer",
-      "question": "If you want to travel conveniently around a city and hop on and off at different tourist attractions, you should take a ....",
-      "answer": "hop-on hop-off bus"
-    },
-    {
-      "type": "short_answer",
-      "question": "Watching the ... at the beach is a wonderful experience in the evening.",
-      "answer": "sunset"
-    }
-  ]
+    "questions": [
+        {
+            "answer": "b",
+            "options": [
+                "Opera House",
+                "Ferry",
+                "Sunset",
+                "Pagoda"
+            ],
+            "question": "What is a common way to travel around a city and explore famous places?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "options": [
+                "Bridge",
+                "Opera House",
+                "Square",
+                "Water park"
+            ],
+            "question": "Which place is known for performances and concerts?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "options": [
+                "Museum",
+                "Pagoda",
+                "Ferry",
+                "Bridge"
+            ],
+            "question": "What is a public place where people can see historical artifacts?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "options": [
+                "Water park",
+                "Opera House",
+                "Pagoda",
+                "Sunset"
+            ],
+            "question": "Where do people go to pray in a Buddhist culture?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "options": [
+                "Bridge",
+                "Hop-on hop-off bus",
+                "Ferry",
+                "Square"
+            ],
+            "question": "What can you use to travel across a river without a car?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "bridge",
+            "question": "A ... is a structure built over a river or road that allows people and vehicles to cross.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "museum",
+            "question": "People can visit a ... to learn about history and art.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "Opera House",
+            "question": "The Sydney ... is one of the most famous landmarks in Australia.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "hop-on hop-off bus",
+            "question": "If you want to travel conveniently around a city and hop on and off at different tourist attractions, you should take a ....",
+            "type": "short_answer"
+        },
+        {
+            "answer": "sunset",
+            "question": "Watching the ... at the beach is a wonderful experience in the evening.",
+            "type": "short_answer"
+        }
+    ]
 }

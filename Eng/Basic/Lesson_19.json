@@ -1,84 +1,84 @@
 {
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "question": "What word describes a place that is calm and quiet?",
-      "options": {
-        "Exciting",
-        "Beautiful",
-        "Peaceful",
-        "Fantastic"
-      },
-      "answer": "c"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "A city with many different kinds of restaurants offers ... food choices.",
-      "options": {
-        "A variety of",
-        "Walking street",
-        "Centre",
-        "Plan"
-      },
-      "answer": "a"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "If a place is very interesting and full of energy, we can describe it as ...",
-      "options": {
-        "Beautiful",
-        "Exciting",
-        "Peaceful",
-        "Centre"
-      },
-      "answer": "b"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Before traveling to a new city, you should always make a ...",
-      "options": {
-        "Walking street",
-        "Plan",
-        "Centre",
-        "Fantastic"
-      },
-      "answer": "b"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Which of the following best describes a very special and wonderful experience?",
-      "options": {
-        "Beautiful",
-        "Fantastic",
-        "Peaceful",
-        "Centre"
-      },
-      "answer": "b"
-    },
-    {
-      "type": "short_answer",
-      "question": "This town is very ... with colorful flowers and clear blue skies.",
-      "answer": "beautiful"
-    },
-    {
-      "type": "short_answer",
-      "question": "There are ... activities for tourists to enjoy, from shopping to sightseeing.",
-      "answer": "a variety of"
-    },
-    {
-      "type": "short_answer",
-      "question": "Hoan Kiem Lake is located in the ... of Hanoi.",
-      "answer": "centre"
-    },
-    {
-      "type": "short_answer",
-      "question": "The old town is famous for its ... where people can walk without worrying about cars.",
-      "answer": "walking street"
-    },
-    {
-      "type": "short_answer",
-      "question": "Before the trip, we need to ... everything carefully.",
-      "answer": "plan"
-    }
-  ]
+    "questions": [
+        {
+            "answer": "c",
+            "options": [
+                "Exciting",
+                "Beautiful",
+                "Peaceful",
+                "Fantastic"
+            ],
+            "question": "What word describes a place that is calm and quiet?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "options": [
+                "A variety of",
+                "Walking street",
+                "Centre",
+                "Plan"
+            ],
+            "question": "A city with many different kinds of restaurants offers ... food choices.",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "options": [
+                "Beautiful",
+                "Exciting",
+                "Peaceful",
+                "Centre"
+            ],
+            "question": "If a place is very interesting and full of energy, we can describe it as ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "options": [
+                "Walking street",
+                "Plan",
+                "Centre",
+                "Fantastic"
+            ],
+            "question": "Before traveling to a new city, you should always make a ...",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "options": [
+                "Beautiful",
+                "Fantastic",
+                "Peaceful",
+                "Centre"
+            ],
+            "question": "Which of the following best describes a very special and wonderful experience?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "beautiful",
+            "question": "This town is very ... with colorful flowers and clear blue skies.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "a variety of",
+            "question": "There are ... activities for tourists to enjoy, from shopping to sightseeing.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "centre",
+            "question": "Hoan Kiem Lake is located in the ... of Hanoi.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "walking street",
+            "question": "The old town is famous for its ... where people can walk without worrying about cars.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "plan",
+            "question": "Before the trip, we need to ... everything carefully.",
+            "type": "short_answer"
+        }
+    ]
 }

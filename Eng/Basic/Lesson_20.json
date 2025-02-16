@@ -1,84 +1,84 @@
 {
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "question": "Where can you see different kinds of sea creatures?",
-      "options": {
-        "River",
-        "Cave",
-        "Island",
-        "Aquarium"
-      },
-      "answer": "d"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "What activity helps students improve their musical skills?",
-      "options": {
-        "Go camping",
-        "Join a music club",
-        "Visit an eco-farm",
-        "Practise swimming"
-      },
-      "answer": "b"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Which place is usually surrounded by water?",
-      "options": {
-        "Waterfall",
-        "Cave",
-        "Island",
-        "River"
-      },
-      "answer": "c"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "What do people usually do when they go camping?",
-      "options": {
-        "Take lessons",
-        "Grow vegetables",
-        "Sleep in a tent",
-        "Practise swimming"
-      },
-      "answer": "c"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "What do people visit when they want to explore underground rock formations?",
-      "options": {
-        "Cave",
-        "Waterfall",
-        "Island",
-        "Aquarium"
-      },
-      "answer": "a"
-    },
-    {
-      "type": "short_answer",
-      "question": "People love to travel to the ... to enjoy the fresh air and see beautiful waterfalls.",
-      "answer": "river"
-    },
-    {
-      "type": "short_answer",
-      "question": "My family will ... this weekend to enjoy nature.",
-      "answer": "go camping"
-    },
-    {
-      "type": "short_answer",
-      "question": "She spends her free time ... because she wants to improve her skills.",
-      "answer": "practising swimming"
-    },
-    {
-      "type": "short_answer",
-      "question": "We plan to ... this summer because we want to learn how to grow vegetables.",
-      "answer": "visit an eco-farm"
-    },
-    {
-      "type": "short_answer",
-      "question": "Many students ... to improve their speaking and writing skills.",
-      "answer": "take lessons in foreign languages"
-    }
-  ]
+    "questions": [
+        {
+            "answer": "d",
+            "options": [
+                "River",
+                "Cave",
+                "Island",
+                "Aquarium"
+            ],
+            "question": "Where can you see different kinds of sea creatures?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "b",
+            "options": [
+                "Go camping",
+                "Join a music club",
+                "Visit an eco-farm",
+                "Practise swimming"
+            ],
+            "question": "What activity helps students improve their musical skills?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "options": [
+                "Waterfall",
+                "Cave",
+                "Island",
+                "River"
+            ],
+            "question": "Which place is usually surrounded by water?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "c",
+            "options": [
+                "Take lessons",
+                "Grow vegetables",
+                "Sleep in a tent",
+                "Practise swimming"
+            ],
+            "question": "What do people usually do when they go camping?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "a",
+            "options": [
+                "Cave",
+                "Waterfall",
+                "Island",
+                "Aquarium"
+            ],
+            "question": "What do people visit when they want to explore underground rock formations?",
+            "type": "multiple_choice"
+        },
+        {
+            "answer": "river",
+            "question": "People love to travel to the ... to enjoy the fresh air and see beautiful waterfalls.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "go camping",
+            "question": "My family will ... this weekend to enjoy nature.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "practising swimming",
+            "question": "She spends her free time ... because she wants to improve her skills.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "visit an eco-farm",
+            "question": "We plan to ... this summer because we want to learn how to grow vegetables.",
+            "type": "short_answer"
+        },
+        {
+            "answer": "take lessons in foreign languages",
+            "question": "Many students ... to improve their speaking and writing skills.",
+            "type": "short_answer"
+        }
+    ]
 }
