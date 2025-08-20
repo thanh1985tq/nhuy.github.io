@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee Form • Add / Delete / Search</title>
+  <style>
+    :root{
+      --bg:#0f172a;           /* slate-900 */
+      --panel:#111827;        /* gray-900 */
+      --muted:#94a3b8;        /* slate-400 */
+      --text:#e5e7eb;         /* gray-200 */
+      --accent:#22d3ee;       /* cyan-400 */
+      --accent-2:#06b6d4;     /* cyan-500 */
+      --danger:#f43f5e;       /* rose-500 */
+      --border:#1f2937;       /* gray-800 */
+      --ok:#10b981;           /* emerald-500 */
+    }
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.5 system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg),#0b1026 30%,#070b1a);
+      color:var(--text);
+    }
+    .container{max-width:1000px;margin:40px auto;padding:24px}
+    .card{background:color-mix(in oklab, var(--panel), black 10%); border:1px solid var(--border); border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .card h1{margin:0;padding:20px 24px;border-bottom:1px solid var(--border);font-size:22px;font-weight:700;letter-spacing:.3px}
+
+    /* Form */
+    form{display:grid;gap:14px;padding:20px 24px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .field{grid-column:span 4;display:flex;flex-direction:column}
+    .field label{font-size:12px;color:var(--muted);margin:0 0 6px 2px}
+    .input, select, .btn{appearance:none;border:1px solid var(--border);background:#0b1328;color:var(--text);border-radius:12px;padding:12px 14px;font-size:14px;outline:none;transition:border .15s ease, box-shadow .15s ease}
+    .input::placeholder{color:#6b7280}
+    .input:focus, select:focus{border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in oklab, var(--accent), transparent 75%)}
+    .error{min-height:16px;margin-top:6px;color:var(--danger);font-size:12px}
+    .input.erroring, select.erroring{border-color:var(--danger); box-shadow:0 0 0 3px color-mix(in oklab, var(--danger), transparent 80%)}
+
+    .actions{display:flex;gap:10px;align-items:end}
+    .btn{cursor:pointer;font-weight:600;border-radius:12px}
+    .btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));border:none;color:#06202b}
+    .btn-primary:hover{filter:brightness(1.05)}
+
+    /* Table */
+    .table-wrap{padding:0 24px 24px}
+    table{width:100%;border-collapse:separate;border-spacing:0 10px}
+    thead th{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:0 14px}
+    tbody tr{background:#0b1328;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    tbody tr td{padding:12px 14px}
+    tbody tr td:last-child{width:90px}
+    .icon-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--border);background:#0b1328;color:var(--text);border-radius:10px;padding:10px 12px;cursor:pointer}
+    .icon-btn:hover{border-color:#334155}
+    .icon-only{padding:10px;width:42px}
+    .danger{border-color:color-mix(in oklab, var(--danger), transparent 20%)}
+
+    /* Search */
+    .search-bar{display:flex;gap:10px;align-items:center;margin-top:14px}
+    .search-bar .input{flex:1}
+
+    /* Confirm Modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,.6);backdrop-filter:blur(4px);z-index:1000}
+    .modal.open{display:flex}
+    .modal-card{width:min(420px,92vw);background:#0b1328;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 20px 70px rgba(0,0,0,.5)}
+    .modal-card h2{margin:0 0 16px;font-size:18px}
+    .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+    .btn-danger{background:var(--danger);border:none;color:white}
+    .btn-ghost{background:transparent}
+
+    /* Utilities */
+    .hidden{display:none !important}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    @media (max-width: 860px){
+      .field{grid-column:span 12}
+      tbody tr td:last-child{width:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Employee Entry</h1>
+
+      <!-- FORM -->
+      <form id="employeeForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" class="input" type="text" placeholder="Enter full name" autocomplete="off" />
+            <div id="nameError" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="age">Age</label>
+            <input id="age" name="age" class="input" type="text" inputmode="numeric" placeholder="e.g. 30" autocomplete="off" />
+            <div id="ageError" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="position">Position</label>
+            <select id="position" name="position">
+              <option value="--Select--">--Select--</option>
+              <option>Chief</option>
+              <option>Accountance</option>
+              <option>Sale</option>
+			  <option>Senior Supporter</option>
+			  <option>Internship</option>
+            </select>
+            <div id="positionError" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="actions" style="grid-column:span 12">
+            <button type="submit" class="btn btn-primary">
+              <span>Submit</span>
+            </button>
+            <button id="bulkDeleteBtn" type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- TABLE -->
+      <div class="table-wrap">
+        <table id="employeeTable" aria-describedby="tableHelp">
+          <thead>
+            <tr>
+              <th><input id="selectAll" type="checkbox" aria-label="Select all rows" /></th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Position</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <tr>
+              <td><input type="checkbox" class="row-check" aria-label="Select row" /></td>
+              <td>Alice Nguyen</td>
+              <td>29</td>
+              <td>Sale</td>
+              <td>
+                <button type="button" class="icon-btn icon-only danger delete-row" title="Delete" aria-label="Delete row">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a1 1 0 0 1 1 1v2h4v2h-1v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4V6h4V4a1 1 0 0 1 1-1m2 0v2h2V3zM7 8v11h10V8zM9 10h2v7H9zm4 0h2v7h-2z"/></svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="row-check" aria-label="Select row" /></td>
+              <td>Bob Tran</td>
+              <td>35</td>
+              <td>Chief</td>
+              <td>
+                <button type="button" class="icon-btn icon-only danger delete-row" title="Delete" aria-label="Delete row">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a1 1 0 0 1 1 1v2h4v2h-1v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4V6h4V4a1 1 0 0 1 1-1m2 0v2h2V3zM7 8v11h10V8zM9 10h2v7H9zm4 0h2v7h-2z"/></svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="row-check" aria-label="Select row" /></td>
+              <td>Carol Le</td>
+              <td>28</td>
+              <td>Accountance</td>
+              <td>
+                <button type="button" class="icon-btn icon-only danger delete-row" title="Delete" aria-label="Delete row">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a1 1 0 0 1 1 1v2h4v2h-1v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4V6h4V4a1 1 0 0 1 1-1m2 0v2h2V3zM7 8v11h10V8zM9 10h2v7H9zm4 0h2v7h-2z"/></svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="row-check" aria-label="Select row" /></td>
+              <td>David Pham</td>
+              <td>41</td>
+              <td>Sale</td>
+              <td>
+                <button type="button" class="icon-btn icon-only danger delete-row" title="Delete" aria-label="Delete row">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a1 1 0 0 1 1 1v2h4v2h-1v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4V6h4V4a1 1 0 0 1 1-1m2 0v2h2V3zM7 8v11h10V8zM9 10h2v7H9zm4 0h2v7h-2z"/></svg>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="row-check" aria-label="Select row" /></td>
+              <td>Vương Công Thành</td>
+              <td>40</td>
+              <td>Sale</td>
+              <td>
+                <button type="button" class="icon-btn icon-only danger delete-row" title="Delete" aria-label="Delete row">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a1 1 0 0 1 1 1v2h4v2h-1v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4V6h4V4a1 1 0 0 1 1-1m2 0v2h2V3zM7 8v11h10V8zM9 10h2v7H9zm4 0h2v7h-2z"/></svg>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- SEARCH -->
+        <div class="search-bar" role="search">
+          <input id="searchInput" class="input" type="text" placeholder="Search by any field…" autocomplete="off" />
+          <button id="searchBtn" class="icon-btn" type="button" title="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.505 4.505 0 0 1 9.5 14"/></svg>
+            <span class="sr-only">Search</span>
+          </button>
+        </div>
+        <p id="tableHelp" class="sr-only">Use the search to filter rows by name, age, or position.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIRM MODAL -->
+  <div id="confirmModal" class="modal" aria-modal="true" role="dialog" aria-labelledby="confirmTitle" aria-hidden="true">
+    <div class="modal-card">
+      <h2 id="confirmTitle">Are you sure?</h2>
+      <p>This will permanently remove the selected row(s).</p>
+      <div class="modal-actions">
+        <button id="confirmNo" class="btn btn-ghost">No</button>
+        <button id="confirmYes" class="btn btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT MODAL -->
+  <div id="alertModal" class="modal" aria-modal="true" role="dialog" aria-labelledby="alertTitle" aria-hidden="true">
+    <div class="modal-card">
+      <h2 id="alertTitle">Notification</h2>
+      <p id="alertText">There isn't any data selected</p>
+      <div class="modal-actions">
+        <button id="alertOk" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+(function(){
+  const form = document.getElementById('employeeForm');
+  const nameEl = document.getElementById('name');
+  const ageEl = document.getElementById('age');
+  const positionEl = document.getElementById('position');
+  const tbody = document.getElementById('tbody');
+
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  const selectAllEl = document.getElementById('selectAll');
+  const bulkDeleteBtn = document.getElementById('bulkDeleteBtn');
+
+  const nameError = document.getElementById('nameError');
+  const ageError = document.getElementById('ageError');
+  const positionError = document.getElementById('positionError');
+
+  const modal = document.getElementById('confirmModal');
+  const btnYes = document.getElementById('confirmYes');
+  const btnNo = document.getElementById('confirmNo');
+
+  const alertModal = document.getElementById('alertModal');
+  const alertOk = document.getElementById('alertOk');
+  const alertText = document.getElementById('alertText');
+
+  let pendingDeleteRow = null;   // for per-row delete
+  let pendingDeleteRows = [];    // for bulk delete
+
+  /* ---------- helpers ---------- */
+  function clearErrors(){
+    [nameEl, ageEl, positionEl].forEach(el => el.classList.remove('erroring'));
+    [nameError, ageError, positionError].forEach(el => el.textContent = '');
+    nameEl.setAttribute('aria-invalid','false');
+    ageEl.setAttribute('aria-invalid','false');
+    positionEl.setAttribute('aria-invalid','false');
+  }
+
+  function validate(){
+    clearErrors();
+    let ok = true;
+    const name = nameEl.value.trim();
+    const age  = ageEl.value.trim();
+    const pos  = positionEl.value;
+
+    if(name === ''){ nameError.textContent = 'Name is required.'; nameEl.classList.add('erroring'); nameEl.setAttribute('aria-invalid','true'); ok = false; }
+    if(age === ''){ ageError.textContent  = 'Age is required.';  ageEl.classList.add('erroring');  ageEl.setAttribute('aria-invalid','true');  ok = false; }
+    else if(!/^\d+$/.test(age)){ ageError.textContent = 'Age must be numbers only.'; ageEl.classList.add('erroring'); ageEl.setAttribute('aria-invalid','true'); ok = false; }
+    if(pos === '--Select--'){ positionError.textContent = 'Please choose a Position.'; positionEl.classList.add('erroring'); positionEl.setAttribute('aria-invalid','true'); ok = false; }
+    return ok;
+  }
+
+  function addRow(name, age, position){
+    const tr = document.createElement('tr');
+
+    const tdSel = document.createElement('td');
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.className = 'row-check';
+    cb.setAttribute('aria-label','Select row');
+    tdSel.appendChild(cb);
+
+    const tdName = document.createElement('td'); tdName.textContent = name;
+    const tdAge  = document.createElement('td'); tdAge.textContent  = age;
+    const tdPos  = document.createElement('td'); tdPos.textContent  = position;
+
+    const tdDel  = document.createElement('td');
+    const delBtn = document.createElement('button');
+    delBtn.type = 'button';
+    delBtn.className = 'icon-btn icon-only danger delete-row';
+    delBtn.title = 'Delete';
+    delBtn.setAttribute('aria-label','Delete row');
+    delBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a1 1 0 0 1 1 1v2h4v2h-1v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4V6h4V4a1 1 0 0 1 1-1m2 0v2h2V3zM7 8v11h10V8zM9 10h2v7H9zm4 0h2v7h-2z"/></svg>';
+    tdDel.appendChild(delBtn);
+
+    tr.append(tdSel, tdName, tdAge, tdPos, tdDel);
+    tbody.appendChild(tr);
+    updateHeaderCheckboxState();
+  }
+
+  function updateHeaderCheckboxState(){
+    const checks = Array.from(tbody.querySelectorAll('input.row-check'));
+    const total = checks.length;
+    const checked = checks.filter(c => c.checked).length;
+    if(!selectAllEl) return;
+    selectAllEl.indeterminate = checked > 0 && checked < total;
+    selectAllEl.checked = total > 0 && checked === total;
+  }
+
+  function openModal(){ modal.classList.add('open'); modal.removeAttribute('aria-hidden'); btnNo.focus(); }
+  function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); pendingDeleteRow = null; }
+
+  function openAlert(msg){ alertText.textContent = msg || ''; alertModal.classList.add('open'); alertModal.removeAttribute('aria-hidden'); alertOk.focus(); }
+  function closeAlert(){ alertModal.classList.remove('open'); alertModal.setAttribute('aria-hidden','true'); }
+
+  function applySearch(){
+    const q = searchInput.value.trim().toLowerCase();
+    const rows = tbody.querySelectorAll('tr');
+    rows.forEach(tr => {
+      const cells = tr.cells;         // [checkbox, Name, Age, Position, Delete]
+      const name = (cells[1]?.textContent || '').toLowerCase();
+      const age  = (cells[2]?.textContent || '').toLowerCase();
+      const pos  = (cells[3]?.textContent || '').toLowerCase();
+      const hay  = name + ' ' + age + ' ' + pos;
+      const match = q === '' || hay.includes(q);
+      tr.style.display = match ? '' : 'none';
+    });
+  }
+
+  /* ---------- listeners ---------- */
+
+  // Submit (add row)
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(!validate()){
+      const firstErr = document.querySelector('.erroring');
+      if(firstErr) firstErr.focus();
+      return;
+    }
+    addRow(nameEl.value.trim(), ageEl.value.trim(), positionEl.value);
+    form.reset();
+    positionEl.value = '--Select--';
+    clearErrors();
+    nameEl.focus();
+    if(searchInput.value.trim() !== '') applySearch();
+  });
+
+  // Per-row delete icon
+  tbody.addEventListener('click', (e) => {
+    const btn = e.target.closest('.delete-row');
+    if(!btn) return;
+    pendingDeleteRow = btn.closest('tr');
+    pendingDeleteRows = [];
+    openModal();
+  });
+
+  // Keep select-all state synced
+  tbody.addEventListener('change', (e) => {
+    if(e.target && e.target.classList.contains('row-check')) updateHeaderCheckboxState();
+  });
+
+  // Confirm modal
+  btnNo.addEventListener('click', closeModal);
+  btnYes.addEventListener('click', () => {
+    if(pendingDeleteRow){ pendingDeleteRow.remove(); pendingDeleteRow = null; }
+    if(pendingDeleteRows.length){ pendingDeleteRows.forEach(r => r.remove()); pendingDeleteRows = []; }
+    closeModal();
+    updateHeaderCheckboxState();
+  });
+  modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+  window.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+  // Bulk delete
+  bulkDeleteBtn.addEventListener('click', () => {
+    const selected = Array.from(tbody.querySelectorAll('input.row-check:checked')).map(cb => cb.closest('tr'));
+    if(selected.length === 0){ openAlert("There isn't any data selected"); return; }
+    pendingDeleteRow = null;
+    pendingDeleteRows = selected;
+    openModal();
+  });
+
+  // Select-all checkbox
+  if(selectAllEl){
+    selectAllEl.addEventListener('change', () => {
+      const checks = tbody.querySelectorAll('input.row-check');
+      checks.forEach(cb => { cb.checked = selectAllEl.checked; });
+      updateHeaderCheckboxState();
+    });
+  }
+
+  // Alert modal
+  alertModal.addEventListener('click', (e) => { if(e.target === alertModal) closeAlert(); });
+  alertOk.addEventListener('click', closeAlert);
+
+  // Search
+  searchBtn.addEventListener('click', applySearch);
+  searchInput.addEventListener('keydown', (e) => { if(e.key === 'Enter'){ e.preventDefault(); applySearch(); } });
+
+  // Init
+  updateHeaderCheckboxState();
+})();
+</script>
+
+</body>
+</html>

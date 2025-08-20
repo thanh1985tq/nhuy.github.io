@@ -101,6 +101,12 @@
     .submenu li a:hover {
       background-color: #e2e6ea;
     }
+	.sidebar {
+            background-image: url('Asserts/Image/Sidebar_Background.png');
+			background-size: cover;
+			background-position: center; /* Centers the image within the div */
+			background-repeat: no-repeat; /* Prevents image repetition */
+    }
   </style>
 </head>
 <body>
@@ -108,6 +114,11 @@
   <div class="container">
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
+	  <!-- Menu cha: Auto Test -->
+      <button class="menu-button" data-target="autotest-submenu">ROBOT FRAMEWORK TRAINING</button>
+      <ul class="submenu" id="autotest-submenu">
+        <li><a data-page="AutomationTesting/Employee_v2.html">Quản trị người dùng</a></li>
+      </ul>
       <!-- Menu cha: TOÁN -->
       <button class="menu-button" data-target="toan-submenu">TOÁN</button>
       <ul class="submenu" id="toan-submenu">
