@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pickle Ball Order</title>
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#121936; --ink:#e8ecf8; --muted:#a7b0d0; --primary:#6aa7ff;
+      --danger:#ff6b6b; --ok:#41d19a; --warn:#ffd166; --ring:#244a9a55;
+      --shadow:0 10px 30px rgba(0,0,0,.35); --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      background:
+        radial-gradient(1000px 600px at 10% -10%, #1c2550 0%, transparent 70%),
+        radial-gradient(900px 700px at 110% 0%, #132a4a 0%, transparent 70%),
+        var(--bg);
+      color:var(--ink);
+    }
+    header{ padding:28px clamp(16px,4vw,36px) 12px; }
+    .title{ font-size:clamp(22px,2.2vw,28px); font-weight:700; letter-spacing:.2px; margin:0 0 14px; }
+
+    .filter-bar{
+      display:grid; grid-template-columns:repeat(12,1fr); gap:12px;
+      background:linear-gradient(180deg,#0e1530,#0d1733);
+      border:1px solid #1b2550; border-radius:var(--radius); padding:14px; box-shadow:var(--shadow);
+    }
+    .field{ display:flex; flex-direction:column; gap:6px; }
+    .field label{ font-size:12px; color:var(--muted); letter-spacing:.2px }
+    .field input,.field select{
+      background:#0b1330; color:var(--ink); border:1px solid #1b2550; outline:none;
+      padding:10px 12px; border-radius:10px; font-size:14px; transition:border .15s, box-shadow .15s;
+    }
+    .field input:focus,.field select:focus{ border-color:#3459c9; box-shadow:0 0 0 4px var(--ring); }
+
+    .actions{ display:flex; gap:10px; align-items:end; justify-content:flex-end; grid-column:span 12; }
+    .btn{
+      appearance:none; border:none; cursor:pointer; user-select:none; border-radius:12px; font-weight:600; letter-spacing:.2px;
+      padding:10px 14px; box-shadow:var(--shadow); background:#17224a; color:var(--ink); border:1px solid #263a7a;
+      transition:transform .06s ease, filter .15s ease, background .15s;
+    }
+    .btn:hover{ filter:brightness(1.05) } .btn:active{ transform:translateY(1px) }
+    .btn.primary{ background:linear-gradient(180deg,#3c79ff,#235dff); border-color:#315cff }
+    .btn.success{ background:linear-gradient(180deg,#27c59a,#15a87f); border-color:#19b58a }
+
+    .grid-2{grid-column:span 2} .grid-3{grid-column:span 3} .grid-4{grid-column:span 4}
+    .grid-6{grid-column:span 6} .grid-12{grid-column:span 12}
+
+    .card{
+      margin:18px clamp(16px,4vw,36px) 60px; background:linear-gradient(180deg,#0e1530,#0d1733);
+      border:1px solid #1b2550; border-radius:var(--radius); box-shadow:var(--shadow);
+    }
+    .card h2{ margin:0; padding:16px 16px 10px; font-size:15px; color:var(--muted); letter-spacing:.3px }
+    table{ width:100%; border-collapse:collapse; }
+    thead th{ position:sticky; top:0; background:#0f1735; z-index:1; }
+    th,td{ text-align:left; padding:12px 16px; border-bottom:1px solid #1b2550; font-size:14px }
+    tbody tr:hover{ background:#101a3f }
+    .table-wrap{ max-height:520px; overflow:auto; border-top:1px solid #1b2550; border-bottom-left-radius:var(--radius); border-bottom-right-radius:var(--radius) }
+    .actions-cell{ display:flex; gap:10px }
+    .icon-btn{ width:34px; height:34px; border-radius:10px; display:grid; place-items:center; cursor:pointer; border:1px solid #233160; background:#0c1433 }
+    .icon-btn.trash{ border-color:#542c2c; background:#23131a }
+    .icon-btn svg{ width:18px; height:18px; fill:currentColor; color:#a9b7e0 }
+    .icon-btn.trash svg{ color:#ff7c7c } .icon-btn.edit svg{ color:#8ad1ff }
+    .empty{ color:var(--muted); text-align:center; padding:18px }
+
+    .pager{ display:flex; gap:10px; align-items:center; justify-content:flex-end; padding:10px 16px; color:var(--muted) }
+    .pager button{ background:#0f183a; color:var(--ink); border:1px solid #21326c; padding:8px 12px; border-radius:10px }
+
+    dialog::backdrop{ background:rgba(2,6,20,.6); backdrop-filter:blur(3px) }
+    dialog{ border:none; background:#0e1532; color:var(--ink); border-radius:16px; width:min(720px,92vw); padding:0; box-shadow:0 24px 80px rgba(0,0,0,.6) }
+    .modal-head{ display:flex; align-items:center; justify-content:space-between; padding:16px 18px; border-bottom:1px solid #1b2550 }
+    .modal-body{ padding:16px 18px; }
+    .modal-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:12px }
+    .modal-foot{ display:flex; justify-content:flex-end; gap:10px; padding:14px 18px; border-top:1px solid #1b2550 }
+    .close-x{ font-size:22px; line-height:1; cursor:pointer; color:#a6b2df }
+    .error-text{ color:var(--danger); font-size:12px; min-height:14px }
+    .alert{ background:#23131a; color:#ffb3b3; border:1px solid #5a2a2a; padding:10px 12px; border-radius:10px; margin-bottom:10px; display:none }
+    .badge{ display:inline-block; padding:4px 8px; border-radius:999px; font-size:12px; border:1px solid #2a3a80; color:#b8c4f6; background:#111a40 }
+    .badge.annual{ border-color:#2a8059; color:#b9f1dc; background:#0d2a21 }
+
+    @media (max-width:880px){ .grid-3{grid-column:span 6} .grid-2{grid-column:span 6} .actions{grid-column:span 12} }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title">🏓 Pickle Ball Order</h1>
+    <section class="filter-bar" id="filterBar">
+      <div class="field grid-3">
+        <label for="filterFrom">From (date)</label>
+        <input type="date" id="filterFrom" />
+      </div>
+      <div class="field grid-3">
+        <label for="filterTo">nextdate</label>
+        <input type="date" id="filterTo" />
+      </div>
+      <div class="field grid-3">
+        <label for="filterPhone">Phone Number</label>
+        <input type="text" id="filterPhone" inputmode="numeric" autocomplete="tel" placeholder="Digits only" />
+      </div>
+      <div class="field grid-3">
+        <label for="filterCustomer">Customer</label>
+        <input type="text" id="filterCustomer" placeholder="Name contains…" />
+      </div>
+      <div class="actions">
+        <button id="btnSearch" class="btn">Search</button>
+        <button id="btnRegister" class="btn primary">Register</button>
+      </div>
+    </section>
+  </header>
+
+  <main class="card">
+    <h2>Pickle Ball Order</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:34%">Customer</th>
+            <th style="width:38%">Play Time</th>
+            <th style="width:12%">Order Type</th>
+            <th style="width:16%">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr><td class="empty" colspan="4">No orders yet. Click <b>Register</b> to add one.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager" id="pager" hidden>
+      <span id="pageInfo">Page 1 of 1</span>
+      <div style="flex:1"></div>
+      <button id="prevPage">Prev</button>
+      <button id="nextPage">Next</button>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <dialog id="orderModal" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <div style="font-weight:700">Register / Edit Order</div>
+        <div style="font-size:12px;color:var(--muted)">All fields are required</div>
+      </div>
+      <button class="close-x" aria-label="Close" title="Close" id="closeModal">×</button>
+    </div>
+
+    <form id="orderForm" class="modal-body" method="dialog">
+      <div class="alert" id="formAlert"></div>
+      <div class="modal-grid">
+        <div class="field grid-6">
+          <label for="customer">Customer</label>
+          <input type="text" id="customer" required placeholder="Full name" />
+          <div class="error-text" id="err-customer"></div>
+        </div>
+        <div class="field grid-6">
+          <label for="phone">Phone No.</label>
+          <input type="text" id="phone" inputmode="numeric" autocomplete="tel" required placeholder="Digits only" />
+          <div class="error-text" id="err-phone"></div>
+        </div>
+        <div class="field grid-6">
+          <label for="playFrom">Play From</label>
+          <input type="datetime-local" id="playFrom" required />
+          <div class="error-text" id="err-playFrom"></div>
+        </div>
+        <div class="field grid-6">
+          <label for="playTo">Play To</label>
+          <input type="datetime-local" id="playTo" required />
+          <div class="error-text" id="err-playTo"></div>
+        </div>
+        <div class="field grid-6">
+          <label for="orderType">Type</label>
+          <select id="orderType">
+            <option value="Onetime" selected>Onetime</option>
+            <option value="Annual">Annual</option>
+          </select>
+          <div class="error-text" id="err-type"></div>
+        </div>
+      </div>
+    </form>
+
+    <div class="modal-foot">
+      <button class="btn" id="btnCancel">Cancel</button>
+      <button class="btn success" id="btnSave">Save</button>
+    </div>
+  </dialog>
+
+  <script>
+    // ===== Utilities =====
+    const today = (()=>{ const d=new Date(); d.setHours(0,0,0,0); return d; })();
+
+    // dd/MM/yyyy + 24h time formatters
+    const pad2 = n => String(n).padStart(2,'0');
+    function fmtDate(d){ return `${pad2(d.getDate())}/${pad2(d.getMonth()+1)}/${d.getFullYear()}`; }
+    function fmtTime(d){ return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`; }
+    function fmtRange(s,e){
+      const sameDay = s.toDateString()===e.toDateString();
+      return sameDay
+        ? `${fmtDate(s)} · ${fmtTime(s)}–${fmtTime(e)}`
+        : `${fmtDate(s)} ${fmtTime(s)} → ${fmtDate(e)} ${fmtTime(e)}`;
+    }
+
+    function addDays(d,n){ const t=new Date(d); t.setDate(t.getDate()+n); return t; }
+    function startOfDay(d){ const t=new Date(d); t.setHours(0,0,0,0); return t; }
+    function endOfDay(d){ const t=new Date(d); t.setHours(23,59,59,999); return t; }
+    function endOfNextMonth(){ const d=new Date(); return new Date(d.getFullYear(), d.getMonth()+2, 0, 23,59,59,999); }
+    function stripNonDigits(str){ return (str||'').replace(/\D+/g,''); }
+    function overlaps(aStart,aEnd,bStart,bEnd){ return aStart < bEnd && aEnd > bStart; }
+    function sameTimeOfDay(aStart,aEnd,bStart,bEnd){
+      return aStart.getHours()===bStart.getHours() && aStart.getMinutes()===bStart.getMinutes()
+          && aEnd.getHours()===bEnd.getHours() && aEnd.getMinutes()===bEnd.getMinutes();
+    }
+    // SAFE UUID (fallback if crypto.randomUUID not available)
+    function uuid(){
+      if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c=>{
+        const r = Math.random()*16|0, v = c==='x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+      });
+    }
+
+    // <<< MOVED UP: icons must be defined before render() is first called >>>
+    const icons = {
+      pen:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm2.92 1.33h-.5v-.5l9.9-9.9.5.5-9.9 9.9zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"/></svg>`,
+      trash:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12v13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7zm3-4h6l1 1h4v2H4V4h4l1-1z"/></svg>`
+    };
+
+    // ===== State =====
+    let orders = []; // {id, customer, phone, start:Date, end:Date, type:'Onetime'|'Annual'}
+    let filtered = [];
+    const pageSize = 10;
+    let currentPage = 1;
+    let editingId = null;
+
+    // ===== Elements =====
+    const tbody = document.getElementById('tbody');
+    const pager = document.getElementById('pager');
+    const pageInfo = document.getElementById('pageInfo');
+    const prevPageBtn = document.getElementById('prevPage');
+    const nextPageBtn = document.getElementById('nextPage');
+
+    const filterFrom = document.getElementById('filterFrom');
+    const filterTo = document.getElementById('filterTo');
+    const filterPhone = document.getElementById('filterPhone');
+    const filterCustomer = document.getElementById('filterCustomer');
+
+    const dlg = document.getElementById('orderModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const cancelBtn = document.getElementById('btnCancel');
+    const saveBtn = document.getElementById('btnSave');
+    const formAlert = document.getElementById('formAlert');
+
+    const fCustomer = document.getElementById('customer');
+    const fPhone = document.getElementById('phone');
+    const fFrom = document.getElementById('playFrom');
+    const fTo = document.getElementById('playTo');
+    const fType = document.getElementById('orderType');
+
+    const err = {
+      customer: document.getElementById('err-customer'),
+      phone: document.getElementById('err-phone'),
+      playFrom: document.getElementById('err-playFrom'),
+      playTo: document.getElementById('err-playTo'),
+      type: document.getElementById('err-type'),
+    };
+
+    (function init(){
+      // Defaults: From = today, nextdate = tomorrow
+      const iso = d => d.toISOString().slice(0,10);
+      filterFrom.value = iso(today);
+      filterTo.value = iso(addDays(today,1));
+      filterTo.min = iso(today);
+      filterTo.max = iso(endOfNextMonth());
+
+      // Enforce digits-only on phone inputs
+      for(const el of [filterPhone, fPhone]){
+        el.addEventListener('input', () => {
+          const pos = el.selectionStart || 0;
+          el.value = stripNonDigits(el.value);
+          if (el.setSelectionRange) el.setSelectionRange(pos,pos);
+        });
+      }
+
+      document.getElementById('btnSearch').addEventListener('click', applyFilters);
+      document.getElementById('btnRegister').addEventListener('click', () => openModal());
+
+      // Modal controls
+      closeModalBtn.addEventListener('click', () => dlg.close());
+      cancelBtn.addEventListener('click', (e)=>{ e.preventDefault(); dlg.close(); });
+      saveBtn.addEventListener('click', onSave);
+
+      prevPageBtn.addEventListener('click', ()=>{ if(currentPage>1){ currentPage--; render(); }});
+      nextPageBtn.addEventListener('click', ()=>{ const totalPages=Math.max(1,Math.ceil(filtered.length/pageSize)); if(currentPage<totalPages){ currentPage++; render(); }});
+
+      // Seed demo orders (safe uuid)
+      const now=new Date();
+      const s1=new Date(now.getFullYear(),now.getMonth(),now.getDate(),9,0);
+      const e1=new Date(now.getFullYear(),now.getMonth(),now.getDate(),11,0);
+      orders.push({ id: uuid(), customer:'Alice Tran', phone:'0987654321', start:s1, end:e1, type:'Onetime' });
+      const s2=new Date(now.getFullYear(),now.getMonth(),now.getDate(),18,0);
+      const e2=new Date(now.getFullYear(),now.getMonth(),now.getDate(),20,0);
+      orders.push({ id: uuid(), customer:'Vương Công Thành', phone:'0912345678', start:s2, end:e2, type:'Onetime' });
+
+      applyFilters();
+    })();
+
+    // ===== Filtering & Rendering =====
+    function applyFilters(){
+      const from = filterFrom.value ? new Date(filterFrom.value + 'T00:00') : null;
+      const to   = filterTo.value   ? new Date(filterTo.value   + 'T23:59:59.999') : null;
+      const phone = stripNonDigits(filterPhone.value);
+      const namePart = (filterCustomer.value||'').trim().toLowerCase();
+
+      filtered = orders.filter(o=>{
+        const inDate = (!from || o.start >= from) && (!to || o.start <= to);
+        const phoneOk = !phone || o.phone === phone;
+        const nameOk = !namePart || o.customer.toLowerCase().includes(namePart);
+        return inDate && phoneOk && nameOk;
+      }).sort((a,b)=> a.start - b.start || a.customer.localeCompare(b.customer));
+
+      currentPage = 1;
+      render();
+    }
+
+    function render(){
+      tbody.innerHTML = '';
+      const total = filtered.length;
+      const totalPages = Math.max(1, Math.ceil(total / pageSize));
+      const startIdx = (currentPage-1)*pageSize;
+      const view = filtered.slice(startIdx, startIdx+pageSize);
+
+      if(view.length===0){
+        const tr=document.createElement('tr');
+        tr.innerHTML = `<td class="empty" colspan="4">No records match your search.</td>`;
+        tbody.appendChild(tr);
+      } else {
+        for(const o of view){
+          const tr=document.createElement('tr');
+          tr.innerHTML = `
+            <td>
+              <div style="font-weight:600">${escapeHtml(o.customer)}</div>
+              <div style="font-size:12px;color:var(--muted)">${maskPhone(o.phone)}</div>
+            </td>
+            <td>${fmtRange(o.start,o.end)}</td>
+            <td><span class="badge ${o.type==='Annual'?'annual':''}">${o.type}</span></td>
+            <td class="actions-cell">
+              <button class="icon-btn edit" title="Edit" aria-label="Edit" data-action="edit" data-id="${o.id}">${icons.pen}</button>
+              <button class="icon-btn trash" title="Delete" aria-label="Delete" data-action="del" data-id="${o.id}">${icons.trash}</button>
+            </td>`;
+          tbody.appendChild(tr);
+        }
+      }
+
+      pager.hidden = (total<=pageSize);
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+
+      tbody.querySelectorAll('button[data-action]')
+        .forEach(btn => btn.addEventListener('click', onRowAction));
+    }
+
+    function onRowAction(e){
+      const id = e.currentTarget.getAttribute('data-id');
+      const action = e.currentTarget.getAttribute('data-action');
+      const record = orders.find(o => o.id===id);
+      if(!record) return;
+
+      if(action==='edit'){
+        openModal(record);
+      } else if(action==='del'){
+        const msg = record.type==='Annual'
+          ? 'Delete this ANNUAL order for all matching days from today to end of next month?'
+          : 'Delete this order?';
+        if(confirm(msg)){
+          if(record.type==='Onetime'){
+            orders = orders.filter(o => o.id !== id);
+          } else {
+            const endNext = endOfNextMonth();
+            orders = orders.filter(o => {
+              if(o.type!=='Annual') return true;
+              const sameCust = o.customer===record.customer;
+              const samePhone = o.phone===record.phone;
+              const sameTOD = sameTimeOfDay(o.start,o.end,record.start,record.end);
+              const inWindow = o.start >= startOfDay(today) && o.start <= endNext;
+              return !(sameCust && samePhone && sameTOD && inWindow);
+            });
+          }
+          applyFilters();
+        }
+      }
+    }
+
+    // ===== Modal =====
+    function openModal(existing){
+      for(const k in err){ err[k].textContent=''; }
+      formAlert.style.display='none'; formAlert.textContent='';
+
+      if(existing){
+        editingId = existing.id;
+        fCustomer.value = existing.customer;
+        fPhone.value = existing.phone;
+        fFrom.value = toLocalInputValue(existing.start);
+        fTo.value = toLocalInputValue(existing.end);
+        fType.value = existing.type;
+        fType.disabled = true;
+      } else {
+        editingId = null;
+        fCustomer.value=''; fPhone.value='';
+        const now=new Date();
+        const start=new Date(now.getFullYear(),now.getMonth(),now.getDate(),18,0);
+        const end  =new Date(now.getFullYear(),now.getMonth(),now.getDate(),20,0);
+        fFrom.value = toLocalInputValue(start);
+        fTo.value   = toLocalInputValue(end);
+        fType.value='Onetime'; fType.disabled=false;
+      }
+
+      if(typeof dlg.showModal==='function') dlg.showModal(); else dlg.setAttribute('open','');
+    }
+
+    function toLocalInputValue(d){
+      const yyyy=d.getFullYear(), mm=pad2(d.getMonth()+1), dd=pad2(d.getDate()), hh=pad2(d.getHours()), mi=pad2(d.getMinutes());
+      return `${yyyy}-${mm}-${dd}T${hh}:${mi}`;
+    }
+
+    function onSave(e){
+      e.preventDefault();
+      for(const k in err){ err[k].textContent=''; }
+      formAlert.style.display='none'; formAlert.textContent='';
+
+      const customer=fCustomer.value.trim();
+      const phone=stripNonDigits(fPhone.value);
+      const type=fType.value;
+      const sVal=fFrom.value; const tVal=fTo.value;
+
+      let hasError=false;
+      if(!customer){ err.customer.textContent='Customer is required'; hasError=true; }
+      if(!phone){ err.phone.textContent='Phone is required (digits only)'; hasError=true; }
+      if(sVal===''){ err.playFrom.textContent='Start is required'; hasError=true; }
+      if(tVal===''){ err.playTo.textContent='End is required'; hasError=true; }
+      if(hasError) return;
+
+      const start=new Date(sVal); let end=new Date(tVal);
+      if(isNaN(start)||isNaN(end)){ formAlert.textContent='Invalid date/time format.'; formAlert.style.display='block'; return; }
+      if(end<=start){ err.playTo.textContent='End must be after start'; return; }
+
+      const candidates=[];
+      if(type==='Onetime' || editingId){
+        candidates.push({start,end});
+      } else if(type==='Annual'){
+        const endNext=endOfNextMonth(); const firstDay=startOfDay(today);
+        const sH=start.getHours(), sM=start.getMinutes(), eH=end.getHours(), eM=end.getMinutes();
+        for(let d=new Date(firstDay); d<=endNext; d=addDays(d,1)){
+          const s=new Date(d.getFullYear(),d.getMonth(),d.getDate(),sH,sM);
+          let e=new Date(d.getFullYear(),d.getMonth(),d.getDate(),eH,eM);
+          if(e<=s) e=addDays(e,1);
+          candidates.push({start:s,end:e});
+        }
+      }
+
+      const conflict=candidates.find(c=>orders.some(o=>(editingId?o.id!==editingId:true)&&overlaps(c.start,c.end,o.start,o.end)));
+      if(conflict){ formAlert.textContent="There's another team using that duration"; formAlert.style.display='block'; return; }
+
+      if(editingId){
+        const idx=orders.findIndex(o=>o.id===editingId);
+        if(idx>-1){ orders[idx]={...orders[idx], customer, phone, start, end}; }
+      } else if(type==='Onetime'){
+        orders.push({ id: uuid(), customer, phone, start, end, type });
+      } else {
+        const sH=start.getHours(), sM=start.getMinutes(), eH=end.getHours(), eM=end.getMinutes();
+        const endNext=endOfNextMonth(); const firstDay=startOfDay(today);
+        for(let d=new Date(firstDay); d<=endNext; d=addDays(d,1)){
+          const s=new Date(d.getFullYear(),d.getMonth(),d.getDate(),sH,sM);
+          let e=new Date(d.getFullYear(),d.getMonth(),d.getDate(),eH,eM);
+          if(e<=s) e=addDays(e,1);
+          const anyOverlap=orders.some(o=>overlaps(s,e,o.start,o.end));
+          if(!anyOverlap){ orders.push({ id: uuid(), customer, phone, start:s, end:e, type }); }
+        }
+      }
+
+      dlg.close();
+      applyFilters();
+    }
+
+    // Helpers
+    function maskPhone(p){
+      const s=stripNonDigits(p);
+      if(s.length<=4) return s;
+      const tail=s.slice(-4);
+      return s.slice(0,-4).replace(/\d/g,'•')+tail;
+    }
+    function escapeHtml(str){ return String(str).replace(/[&<>"']/g, s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[s]) ); }
+  </script>
+</body>
+</html>
