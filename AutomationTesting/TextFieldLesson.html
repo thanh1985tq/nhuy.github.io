@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Form Sản Phẩm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --danger: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    h1, h2 { margin: 0 0 16px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.03);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    label { font-weight: 600; }
+    .req { color: var(--danger); margin-left: 4px; }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+      background: #fff;
+    }
+    textarea { resize: vertical; min-height: 120px; }
+    input.invalid, textarea.invalid { border-color: var(--danger); outline: none; }
+    .hint { color: var(--muted); font-size: .9rem; }
+
+    .rte {
+      width: 100%;
+      min-height: 180px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .actions { margin-top: 10px; }
+    button[type="submit"] {
+      background: var(--accent);
+      color: #fff;
+      border: 0;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { filter: brightness(0.95); }
+
+    .error {
+      color: var(--danger);
+      font-size: .9rem;
+      min-height: 1.2em;
+    }
+
+    .table-wrap {
+      margin-top: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    thead th {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      background: #fafafa;
+      font-weight: 700;
+    }
+    tbody td {
+      padding: 12px;
+      border-top: 1px solid var(--border);
+      vertical-align: top;
+    }
+    td.desc { white-space: pre-wrap; word-wrap: break-word; }
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .icon-btn:hover { background: #f3f4f6; }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+    .modal.open { display: flex; }
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+    }
+    .modal-content {
+      position: relative;
+      width: min(900px, 92vw);
+      max-height: 86vh;
+      overflow: auto;
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      z-index: 1;
+      animation: pop .12s ease-out;
+    }
+    @keyframes pop { from { transform: scale(.985); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 24px;
+      line-height: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+    .modal-section { margin: 14px 0; }
+    .modal-section .label { font-weight: 700; margin-bottom: 6px; }
+    .text-block { white-space: pre-wrap; }
+
+    .modal-intro {
+      width: 100%;
+      min-height: 220px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Form sản phẩm</h1>
+    <div class="card">
+      <form id="productForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="name">Tên sản phẩm <span class="req">*</span></label>
+            <input id="name" type="text" placeholder="Nhập tên sản phẩm" />
+            <div class="error" id="nameError" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="desc">Mô tả <span class="req">*</span></label>
+            <textarea id="desc" rows="5" placeholder="Nhập mô tả"></textarea>
+            <div class="error" id="descError" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top: 8px;">
+          <label for="introIframe">Giới thiệu nội dung sản phẩm (rich text, trong iFrame)</label>
+          <!-- The rich text editor lives inside this iframe via srcdoc -->
+          <iframe
+            id="introIframe"
+            class="rte"
+            title="Trình soạn thảo rich text"
+            srcdoc='<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 8px; }
+    #editor {
+      min-height: 150px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 10px;
+      outline: none;
+    }
+    #editor:empty:before { content: "Nhập nội dung..."; color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <div id="editor" contenteditable="true" aria-label="Giới thiệu nội dung sản phẩm"></div>
+  <script>
+    // Enable basic keyboard shortcuts like Ctrl+B/I/U naturally.
+    // No external scripts; nothing else needed here.
+  <\/script>
+</body>
+</html>'>
+          </iframe>
+          <span class="hint">Mẹo: Dùng Ctrl+B / Ctrl+I / Ctrl+U để định dạng nhanh.</span>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <h2 style="margin-top: 24px;">Danh sách</h2>
+    <div class="table-wrap">
+      <table aria-label="Danh sách sản phẩm">
+        <thead>
+          <tr>
+            <th style="width: 28%;">Name</th>
+            <th style="width: 56%;">Description</th>
+            <th style="width: 16%;">View</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content">
+      <button class="close-btn" type="button" aria-label="Đóng" data-close>&times;</button>
+      <h3 id="modalTitle">Chi tiết sản phẩm</h3>
+
+      <div class="modal-section">
+        <div class="label">Tên sản phẩm</div>
+        <div id="modalName" class="text-block"></div>
+      </div>
+
+      <div class="modal-section">
+        <div class="label">Mô tả</div>
+        <div id="modalDesc" class="text-block"></div>
+      </div>
+
+      <div class="modal-section">
+        <div class="label">Giới thiệu nội dung sản phẩm</div>
+        <!-- Show the saved rich text inside a sandboxed iframe -->
+        <iframe id="modalIntro" class="modal-intro" sandbox=""></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.getElementById('productForm');
+      const nameInput = document.getElementById('name');
+      const descInput = document.getElementById('desc');
+      const nameError = document.getElementById('nameError');
+      const descError = document.getElementById('descError');
+      const tableBody = document.getElementById('tableBody');
+      const editorIframe = document.getElementById('introIframe');
+
+      const modal = document.getElementById('modal');
+      const modalName = document.getElementById('modalName');
+      const modalDesc = document.getElementById('modalDesc');
+      const modalIntro = document.getElementById('modalIntro');
+
+      /** In-memory store for table rows */
+      const items = [];
+
+      function getEditorDoc() {
+        return editorIframe.contentDocument || editorIframe.contentWindow.document;
+      }
+      function getIntroHtml() {
+        const edoc = getEditorDoc();
+        const editor = edoc && edoc.getElementById('editor');
+        return editor ? editor.innerHTML.trim() : '';
+      }
+      function clearErrors() {
+        nameError.textContent = '';
+        descError.textContent = '';
+        nameInput.classList.remove('invalid');
+        descInput.classList.remove('invalid');
+      }
+      function validate() {
+        clearErrors();
+        let ok = true;
+        if (!nameInput.value.trim()) {
+          nameError.textContent = 'Vui lòng nhập Tên sản phẩm.';
+          nameInput.classList.add('invalid'); ok = false;
+        }
+        if (!descInput.value.trim()) {
+          descError.textContent = 'Vui lòng nhập Mô tả.';
+          descInput.classList.add('invalid'); ok = false;
+        }
+        return ok;
+      }
+      function addRow(index, item) {
+        const tr = document.createElement('tr');
+
+        const tdName = document.createElement('td');
+        tdName.textContent = item.name;
+
+        const tdDesc = document.createElement('td');
+        tdDesc.textContent = item.description;
+        tdDesc.className = 'desc';
+
+        const tdView = document.createElement('td');
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'icon-btn view-btn';
+        btn.title = 'Xem';
+        btn.setAttribute('aria-label', 'Xem');
+        btn.dataset.index = index;
+        btn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5c5 0 9.27 3.11 11 7-1.73 3.89-6 7-11 7S2.73 15.89 1 12c1.73-3.89 6-7 11-7Zm0 2C8.14 7 4.94 9.2 3.35 12 4.94 14.8 8.14 17 12 17s7.06-2.2 8.65-5C19.06 9.2 15.86 7 12 7Zm0 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"></path></svg>';
+        tdView.appendChild(btn);
+
+        tr.append(tdName, tdDesc, tdView);
+        tableBody.appendChild(tr);
+      }
+      function resetForm() {
+        form.reset();
+        const edoc = getEditorDoc();
+        const editor = edoc && edoc.getElementById('editor');
+        if (editor) editor.innerHTML = '';
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!validate()) return;
+
+        const item = {
+          name: nameInput.value.trim(),
+          description: descInput.value.trim(),
+          introHtml: getIntroHtml()
+        };
+        const index = items.push(item) - 1;
+        addRow(index, item);
+        resetForm();
+        nameInput.focus();
+      });
+
+      // Event delegation for "View" buttons
+      tableBody.addEventListener('click', (e) => {
+        const btn = e.target.closest('.view-btn');
+        if (!btn) return;
+        const idx = Number(btn.dataset.index);
+        const item = items[idx];
+        if (!item) return;
+        openModal(item);
+      });
+
+      function openModal(item) {
+        modalName.textContent = item.name;
+        modalDesc.textContent = item.description;
+
+        // Render the saved rich HTML inside a sandboxed iframe (no scripts)
+        modalIntro.setAttribute('srcdoc', `
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<style>body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin:8px; line-height:1.6}</style>
+</head><body>${item.introHtml || '<em>(Không có nội dung)</em>'}</body></html>`);
+
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        modalIntro.removeAttribute('srcdoc');
+      }
+
+      modal.addEventListener('click', (e) => {
+        if (e.target.hasAttribute('data-close')) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+    })();
+  </script>
+</body>
+</html>
